@@ -2,7 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Building2, GraduationCap } from "lucide-react";
 
-import verizonLogo from "@/assets/logos/verizon.png";
+import verizonLogo from "@/assets/logos/verizon.svg";
 import uniphoreLogo from "@/assets/logos/uniphore.png";
 import bnpLogo from "@/assets/logos/bnp-paribas.png";
 import greatlakesLogo from "@/assets/logos/greatlakes.png";
@@ -16,7 +16,7 @@ const timelineItems = [
     period: "Feb 2022 – Present",
     location: "Chennai, India",
     logo: verizonLogo,
-    logoBg: "bg-white",
+    logoBg: "bg-background",
     highlights: [
       "$380M+ cumulative revenue impact through AI-enabled digital personalization",
       "AI/ML bundled product recommendation engine: +8-10% home internet sales",
@@ -26,31 +26,34 @@ const timelineItems = [
     ],
   },
   {
+    type: "education" as const,
+    company: "Great Lakes Institute of Management",
+    role: "PGP – Business Analytics & Business Intelligence",
+    period: "2017 – 2018",
+    location: "Chennai, India (in collaboration with Stuart School of Business, IIT Chicago)",
+    logo: greatlakesLogo,
+    logoBg: "bg-white",
+    highlights: [
+      "12-month hybrid program focused on end-to-end data-driven decision-making",
+      "Advanced competencies in Statistical Methods, Predictive Modeling & Machine Learning",
+      "Technical proficiency in Data Visualization (Tableau) & Optimization Techniques",
+      "Extracted actionable insights from large datasets for strategic planning",
+    ],
+  },
+  {
     type: "work" as const,
     company: "Uniphore Software Systems",
     role: "Senior Business Analyst & Project Manager",
     period: "Sep 2018 – Feb 2022",
     location: "Chennai, India",
     logo: uniphoreLogo,
-    logoBg: "bg-[hsl(var(--navy))]",
+    logoBg: "bg-transparent",
     highlights: [
       "70-80% reduction in After-Call Work via LLM-driven automation",
       "Managed 20+ resources with 100% SLA adherence across parallel workstreams",
       "8-10% lift in insurance policy renewals via predictive analytics",
       "Deployed automated QA across 4 global regions",
       "3× Award of Excellence for innovation & cross-functional leadership",
-    ],
-  },
-  {
-    type: "education" as const,
-    company: "Great Lakes Institute of Management",
-    role: "PGP – Business Analytics & Business Intelligence",
-    period: "2017 – 2018",
-    location: "Chennai, India",
-    logo: greatlakesLogo,
-    logoBg: "bg-white",
-    highlights: [
-      "Advanced analytics, BI tools & data-driven decision making",
     ],
   },
   {
@@ -77,7 +80,10 @@ const timelineItems = [
     logo: itmLogo,
     logoBg: "bg-white rounded-full",
     highlights: [
-      "Foundation in financial analysis, derivatives & portfolio management",
+      "Foundation in Financial Management, Corporate Strategy & Data-Driven Decision Making",
+      "Core modules: Corporate Finance, Investment Banking, Security Analysis & Portfolio Management",
+      "Technical proficiency in Advanced Excel & VBA for financial modeling",
+      "Decision Sciences for business intelligence & risk assessment",
     ],
   },
 ];
@@ -102,15 +108,12 @@ const JourneySection = () => {
           <p className="text-muted-foreground">
             A decade of impact across global enterprises
           </p>
-          {/* Legend */}
           <div className="flex items-center justify-center gap-6 mt-4">
             <div className="flex items-center gap-2 text-sm">
               <Building2 size={14} className="text-primary" />
               <span className="text-primary font-medium">Work Experience</span>
-              <span className="text-muted-foreground">← Left</span>
             </div>
             <div className="flex items-center gap-2 text-sm">
-              <span className="text-muted-foreground">Right →</span>
               <GraduationCap size={14} className="text-accent" />
               <span className="text-accent font-medium">Education</span>
             </div>
@@ -124,32 +127,45 @@ const JourneySection = () => {
 
           {timelineItems.map((exp, i) => {
             const isWork = exp.type === "work";
-            const borderColor = isWork ? "border-primary" : "border-accent";
+            const borderColor = isWork ? "border-primary/60" : "border-accent/60";
             const dotColor = isWork ? "bg-primary" : "bg-accent";
-            const bulletColor = isWork ? "bg-primary" : "bg-accent";
+            const bulletColor = isWork ? "bg-primary/70" : "bg-accent/70";
             const roleColor = isWork ? "text-primary" : "text-accent";
+            const cardBg = isWork
+              ? "bg-primary/[0.03] hover:bg-primary/[0.06]"
+              : "bg-accent/[0.03] hover:bg-accent/[0.06]";
             const hoverShadow = isWork
-              ? "hover:shadow-[0_0_20px_hsl(var(--primary)/0.15)]"
-              : "hover:shadow-[0_0_20px_hsl(var(--accent)/0.15)]";
+              ? "hover:shadow-[0_0_24px_hsl(var(--primary)/0.12)]"
+              : "hover:shadow-[0_0_24px_hsl(var(--accent)/0.12)]";
+
+            // Alternate sides: work left, education right
+            const isLeft = isWork;
 
             return (
               <motion.div
                 key={exp.company + exp.period}
-                initial={{ opacity: 0, x: isWork ? -40 : 40 }}
+                initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.15 }}
                 className={`relative mb-12 md:mb-16 ${
-                  isWork ? "md:pr-[52%]" : "md:pl-[52%]"
+                  isLeft ? "md:pr-[52%]" : "md:pl-[52%]"
                 } pl-16 md:pl-0`}
               >
-                {/* Dot */}
+                {/* Dot on timeline */}
                 <div
                   className={`absolute left-4 md:left-1/2 top-2 w-5 h-5 rounded-full ${dotColor} border-4 border-background md:-translate-x-1/2 z-10`}
                 />
 
+                {/* Connector line from dot to card */}
+                <div
+                  className={`hidden md:block absolute top-[18px] h-px bg-border ${
+                    isLeft ? "right-[48%] w-[4%]" : "left-[48%] w-[4%]"
+                  }`}
+                />
+
                 {/* Card */}
                 <div
-                  className={`glass-card rounded-xl p-6 border-l-4 ${borderColor} ${hoverShadow} transition-shadow duration-300`}
+                  className={`rounded-xl p-6 border ${borderColor} ${cardBg} ${hoverShadow} transition-all duration-300 backdrop-blur-sm`}
                 >
                   <div className="flex items-center gap-3 mb-3">
                     <div
