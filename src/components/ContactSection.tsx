@@ -15,7 +15,7 @@ const ContactSection = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Let's <span className="text-gradient-blue">Connect</span>
+            <span className="text-gradient-gold">Let's</span> <span className="text-gradient-blue">Connect</span>
           </h2>
           <p className="text-muted-foreground mb-12 max-w-xl mx-auto">
             Open to exciting opportunities in Product, Program & Project Management leadership roles.

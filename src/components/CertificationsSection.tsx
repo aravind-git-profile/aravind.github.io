@@ -32,7 +32,7 @@ const CertificationsSection = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Credentials & <span className="text-gradient-blue">Certifications</span>
+            <span className="text-gradient-gold">Credentials &</span> <span className="text-gradient-blue">Certifications</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Continuously advancing through industry-recognized professional development

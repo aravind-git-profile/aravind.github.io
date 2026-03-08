@@ -52,7 +52,7 @@ const ImpactSection = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            The <span className="text-gradient-gold">Impact</span> Numbers
+            <span className="text-gradient-gold">The Impact</span> <span className="text-gradient-blue">Numbers</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Driving measurable outcomes from agile startups to Fortune 500 enterprises — spanning IT, Banking, Analytics & Telecommunications
