@@ -160,7 +160,7 @@ const CompanyProjectBlock = ({
       </div>
       <div className={`flex-1 h-px ${accentClass} ml-4`} />
     </motion.div>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
       {projects.map((project, i) => (
         <ProjectCard key={project.title} project={project} index={i} inView={inView} />
       ))}
