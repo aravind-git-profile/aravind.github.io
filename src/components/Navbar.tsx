@@ -18,8 +18,8 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const { scrollY } = useScroll();
-  const imageSize = useTransform(scrollY, [0, 300], [64, 32]);
-  const borderWidth = useTransform(scrollY, [0, 300], [3, 2]);
+  const imageSize = useTransform(scrollY, [0, 300], [56, 32]);
+  const borderWidth = useTransform(scrollY, [0, 300], [2, 2]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
