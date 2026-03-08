@@ -95,6 +95,23 @@ const ImpactSection = () => {
             </div>
           ))}
         </motion.div>
+
+        {/* Impact pillars */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.9 }}
+          className="flex flex-wrap justify-center gap-4 mt-8"
+        >
+          {["Strategic Planning", "Innovation", "Process Efficiency"].map((label, i) => (
+            <span
+              key={label}
+              className="glass-card rounded-full px-6 py-3 text-sm font-semibold tracking-wide text-primary border border-primary/20"
+            >
+              {label}
+            </span>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
