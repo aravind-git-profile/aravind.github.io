@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Download, Linkedin, Mail, MapPin, Phone, Briefcase, Award, Zap } from "lucide-react";
+import { Download, Linkedin, Mail, MapPin, Phone, Briefcase, Award, Zap, Globe, CalendarCheck } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
@@ -20,18 +20,29 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-body mb-8 animate-pulse-glow"
+          className="flex flex-wrap justify-center gap-3 mb-8"
         >
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full rounded-full bg-primary animate-ping" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
-          </span>
-          <motion.span
-            animate={{ opacity: [1, 0.5, 1] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          >
-            Open to Opportunities
-          </motion.span>
+          {[
+            { icon: <span className="relative flex h-2 w-2"><span className="absolute inline-flex h-full w-full rounded-full bg-primary animate-ping" /><span className="relative inline-flex rounded-full h-2 w-2 bg-primary" /></span>, label: "Open to Opportunities" },
+            { icon: <Globe size={14} className="text-primary" />, label: "Global Mobility — Ready to Relocate" },
+            { icon: <CalendarCheck size={14} className="text-primary" />, label: "Available for Immediate Joining" },
+          ].map((badge, i) => (
+            <motion.div
+              key={badge.label}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 + i * 0.15 }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-body"
+            >
+              {badge.icon}
+              <motion.span
+                animate={{ opacity: [1, 0.6, 1] }}
+                transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
+              >
+                {badge.label}
+              </motion.span>
+            </motion.div>
+          ))}
         </motion.div>
 
         {/* Name */}
