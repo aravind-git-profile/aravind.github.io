@@ -3,19 +3,29 @@ import { useRef } from "react";
 import certsCollage from "@/assets/certifications-collage.jpg";
 import { ExternalLink } from "lucide-react";
 
+import badgePmp from "@/assets/badges/pmp.png";
+import badgeCbap from "@/assets/badges/cbap.png";
+import badgePspo from "@/assets/badges/pspo2.png";
+import badgePmiAcp from "@/assets/badges/pmi-acp.png";
+import badgePopm from "@/assets/badges/safe-popm.png";
+import badgeGreenbelt from "@/assets/badges/greenbelt.png";
+import badgeSmartsheet from "@/assets/badges/smartsheet.jpeg";
+import badgeTableau from "@/assets/badges/tableau.jpg";
+import badgeQuantum from "@/assets/badges/quantum-metric.png";
+
 const certifications = [
-  { name: "PMP®", issuer: "PMI", desc: "Project Management Professional", color: "from-primary to-electric-glow" },
-  { name: "CBAP®", issuer: "IIBA", desc: "Certified Business Analysis Professional", color: "from-accent to-gold-dim" },
-  { name: "PSPO II", issuer: "Scrum.org", desc: "Professional Scrum Product Owner II", color: "from-teal to-primary" },
-  { name: "PMI-ACP®", issuer: "PMI", desc: "Agile Certified Practitioner", color: "from-primary to-electric-glow" },
-  { name: "SAFe® POPM", issuer: "SAFe 6", desc: "Product Owner / Product Manager", color: "from-accent to-gold-dim" },
-  { name: "LSS Green Belt", issuer: "Verizon", desc: "Lean Six Sigma Green Belt", color: "from-teal to-primary" },
+  { name: "PMP®", issuer: "PMI", desc: "Project Management Professional", color: "from-primary to-electric-glow", badge: badgePmp },
+  { name: "CBAP®", issuer: "IIBA", desc: "Certified Business Analysis Professional", color: "from-accent to-gold-dim", badge: badgeCbap },
+  { name: "PSPO II", issuer: "Scrum.org", desc: "Professional Scrum Product Owner II", color: "from-teal to-primary", badge: badgePspo },
+  { name: "PMI-ACP®", issuer: "PMI", desc: "Agile Certified Practitioner", color: "from-primary to-electric-glow", badge: badgePmiAcp },
+  { name: "SAFe® POPM", issuer: "SAFe 6", desc: "Product Owner / Product Manager", color: "from-accent to-gold-dim", badge: badgePopm, removeBg: true },
+  { name: "LSS Green Belt", issuer: "Verizon", desc: "Lean Six Sigma Green Belt", color: "from-teal to-primary", badge: badgeGreenbelt },
 ];
 
 const additionalSkills = [
-  "Smartsheet Core Product",
-  "Tableau Advanced",
-  "Quantum Metric Business Analysis",
+  { name: "Smartsheet Core Product", badge: badgeSmartsheet },
+  { name: "Tableau Advanced", badge: badgeTableau, removeBg: true },
+  { name: "Quantum Metric Business Analysis", badge: badgeQuantum },
 ];
 
 const CertificationsSection = () => {
@@ -47,12 +57,14 @@ const CertificationsSection = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="glass-card rounded-xl p-6 hover:glow-blue transition-all duration-300 group"
+              className="glass-card rounded-xl p-6 hover:glow-blue transition-all duration-300 group flex flex-col items-center text-center"
             >
-              <div className={`w-14 h-14 rounded-full bg-gradient-to-br ${cert.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                <span className="text-xs font-bold font-mono text-primary-foreground text-center leading-tight">
-                  {cert.name.split(" ")[0]}
-                </span>
+              <div className="w-20 h-20 rounded-full overflow-hidden mb-4 group-hover:scale-110 transition-transform flex items-center justify-center">
+                <img
+                  src={cert.badge}
+                  alt={cert.name}
+                  className={`w-full h-full object-contain ${cert.removeBg ? 'mix-blend-multiply dark:mix-blend-screen dark:invert' : ''}`}
+                />
               </div>
               <h3 className="font-body font-bold text-foreground text-lg">{cert.name}</h3>
               <p className="text-sm text-primary font-body">{cert.issuer}</p>
@@ -66,12 +78,17 @@ const CertificationsSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.6 }}
-          className="flex flex-wrap justify-center gap-3 mb-12"
+          className="flex flex-wrap justify-center gap-4 mb-12"
         >
           {additionalSkills.map((skill) => (
-            <span key={skill} className="px-4 py-2 rounded-full border border-border text-sm text-muted-foreground hover:border-primary/40 transition-colors">
-              {skill}
-            </span>
+            <div key={skill.name} className="flex items-center gap-3 px-4 py-2 rounded-full border border-border text-sm text-muted-foreground hover:border-primary/40 transition-colors">
+              <img
+                src={skill.badge}
+                alt={skill.name}
+                className={`w-6 h-6 object-contain rounded-sm ${skill.removeBg ? 'mix-blend-multiply dark:mix-blend-screen dark:invert' : ''}`}
+              />
+              {skill.name}
+            </div>
           ))}
         </motion.div>
 
