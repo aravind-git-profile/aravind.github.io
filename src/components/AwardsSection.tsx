@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Award, Star, Trophy } from "lucide-react";
+import collage from "@/assets/collage-09.jpg";
 import verizonLogo from "@/assets/logos/verizon-wordmark.svg";
 import uniphoreLogo from "@/assets/logos/uniphore-white.png";
 import bnpLogo from "@/assets/logos/bnp-paribas-logo.png";
