@@ -34,6 +34,7 @@ const awards = [
   {
     company: "BNP Paribas",
     logo: bnpLogo,
+    logoBg: "bg-white",
     logoClass: "max-h-20 max-w-[240px]",
     icon: Award,
     accolades: [
