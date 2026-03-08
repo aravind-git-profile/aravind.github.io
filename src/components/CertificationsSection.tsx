@@ -23,9 +23,9 @@ const certifications = [
 ];
 
 const additionalSkills = [
-  { name: "Smartsheet Core Product", badge: badgeSmartsheet },
-  { name: "Tableau Advanced", badge: badgeTableau, removeBg: true },
-  { name: "Quantum Metric Business Analysis", badge: badgeQuantum },
+  { name: "Smartsheet", issuer: "Smartsheet", desc: "Core Product Certified", badge: badgeSmartsheet, color: "from-primary to-electric-glow" },
+  { name: "Tableau Advanced", issuer: "Tableau", desc: "Advanced Analytics", badge: badgeTableau, removeBg: true, color: "from-accent to-gold-dim" },
+  { name: "Quantum Metric", issuer: "Quantum Metric", desc: "Business Analysis Certified", badge: badgeQuantum, color: "from-teal to-primary" },
 ];
 
 const CertificationsSection = () => {
