@@ -10,6 +10,7 @@ const awards = [
     company: "Verizon",
     logo: verizonLogo,
     logoBg: "bg-white",
+    logoClass: "max-h-14 max-w-[180px]",
     icon: Star,
     accolades: [
       { label: "8 Spotlight Awards", desc: "Customer Excellence recognitions from CX Leadership & Senior Management" },
@@ -22,6 +23,7 @@ const awards = [
     company: "Uniphore",
     logo: uniphoreLogo,
     logoBg: "bg-slate-800",
+    logoClass: "max-h-14 max-w-[180px]",
     icon: Trophy,
     accolades: [
       { label: "Award of Excellence ×3", desc: "Exceptional contributions in product innovation and collaborative cross-functional leadership" },
@@ -33,6 +35,7 @@ const awards = [
     company: "BNP Paribas",
     logo: bnpLogo,
     logoBg: "bg-white",
+    logoClass: "max-h-20 max-w-[240px]",
     icon: Award,
     accolades: [
       { label: "Golden Star · Rising Star", desc: "Prestigious recognition for outstanding individual performance" },
@@ -82,7 +85,7 @@ const AwardsSection = () => {
                   <img
                     src={award.logo}
                     alt={award.company}
-                    className="max-h-14 max-w-[180px] object-contain"
+                    className={`${award.logoClass} object-contain`}
                   />
                 </div>
 
