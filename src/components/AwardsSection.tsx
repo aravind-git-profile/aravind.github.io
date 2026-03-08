@@ -78,11 +78,11 @@ const AwardsSection = () => {
                 className={`glass-card rounded-2xl p-6 border ${award.border} hover:glow-blue transition-all duration-300 flex flex-col`}
               >
                 {/* Company logo */}
-                <div className={`w-full h-16 ${award.logoBg} rounded-lg flex items-center justify-center mb-5 px-4`}>
+                <div className={`w-full h-20 ${award.logoBg} rounded-lg flex items-center justify-center mb-5 px-4`}>
                   <img
                     src={award.logo}
                     alt={award.company}
-                    className="max-h-10 max-w-[140px] object-contain"
+                    className="max-h-14 max-w-[180px] object-contain"
                   />
                 </div>
 
