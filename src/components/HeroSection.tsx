@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Download, Linkedin, Mail, MapPin, Phone, Briefcase, Award, Zap } from "lucide-react";
+import { Download, Linkedin, Mail, MapPin, Phone, Briefcase, Award, Zap, Globe, CalendarCheck } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
