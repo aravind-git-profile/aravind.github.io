@@ -1,4 +1,4 @@
-import { ExternalLink } from "lucide-react";
+
 
 import badgePmp from "@/assets/badges/pmp.png";
 import badgeCbap from "@/assets/badges/cbap.png";
@@ -88,18 +88,6 @@ const CertificationsSection = () => {
               <p className="text-xs text-muted-foreground mt-1">{skill.desc}</p>
             </a>
           ))}
-        </div>
-
-        {/* Verify link */}
-        <div data-aos="fade-up" className="text-center mt-6">
-          <a
-            href="https://www.kickresume.com/cv/aravind/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-primary hover:text-electric-glow transition-colors"
-          >
-            <ExternalLink size={14} /> View KickResume Profile
-          </a>
         </div>
       </div>
     </section>
