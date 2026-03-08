@@ -34,7 +34,7 @@ const CompetenciesSection = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Core <span className="text-gradient-blue">Competencies</span>
+            <span className="text-gradient-gold">Core</span> <span className="text-gradient-blue">Competencies</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Where creativity meets strategy — bridging technical excellence with business impact
