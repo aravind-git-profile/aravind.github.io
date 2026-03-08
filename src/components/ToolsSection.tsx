@@ -34,9 +34,7 @@ const tools = [
 const categories = ["Analytics, AI & Visualization", "Collaboration", "Programming"];
 
 const categoryColors: Record<string, string> = {
-  "Analytics": "from-primary/20 to-primary/5",
-  "AI / Optimization": "from-accent/20 to-accent/5",
-  "Platforms": "from-teal/20 to-teal/5",
+  "Analytics, AI & Visualization": "from-primary/20 to-accent/5",
   "Collaboration": "from-primary/20 to-electric-glow/5",
   "Programming": "from-accent/20 to-primary/5",
 };
