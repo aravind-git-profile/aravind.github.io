@@ -103,13 +103,23 @@ const ImpactSection = () => {
           transition={{ duration: 0.5, delay: 0.9 }}
           className="flex flex-wrap justify-center gap-4 mt-8"
         >
-          {["Strategic Planning", "Innovation", "Process Efficiency"].map((label, i) => (
-            <span
-              key={label}
-              className="glass-card rounded-full px-6 py-3 text-sm font-semibold tracking-wide text-primary border border-primary/20"
+          {[
+            { label: "Strategic Planning", icon: "🎯" },
+            { label: "Innovation", icon: "💡" },
+            { label: "Process Efficiency", icon: "⚡" },
+            { label: "Change Leadership", icon: "🚀" },
+            { label: "Digital Transformation", icon: "🔄" },
+          ].map((item, i) => (
+            <motion.span
+              key={item.label}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={inView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.4, delay: 0.9 + i * 0.1 }}
+              className="glass-card rounded-full px-6 py-3 text-sm font-semibold tracking-wide text-primary border border-primary/30 hover:border-primary/60 hover:shadow-[0_0_20px_hsl(var(--primary)/0.15)] transition-all duration-300 cursor-default flex items-center gap-2"
             >
-              {label}
-            </span>
+              <span>{item.icon}</span>
+              {item.label}
+            </motion.span>
           ))}
         </motion.div>
       </div>
