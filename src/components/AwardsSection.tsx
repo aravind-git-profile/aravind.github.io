@@ -9,6 +9,7 @@ const awards = [
   {
     company: "Verizon",
     logo: verizonLogo,
+    logoBg: "bg-white",
     logoClass: "max-h-14 max-w-[180px]",
     icon: Star,
     accolades: [
