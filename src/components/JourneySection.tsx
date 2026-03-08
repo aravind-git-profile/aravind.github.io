@@ -138,8 +138,8 @@ const JourneySection = () => {
               ? "hover:shadow-[0_0_24px_hsl(var(--primary)/0.12)]"
               : "hover:shadow-[0_0_24px_hsl(var(--accent)/0.12)]";
 
-            // Alternate sides: work left, education right
-            const isLeft = isWork;
+            // Alternate sides: even index left, odd index right
+            const isLeft = i % 2 === 0;
 
             return (
               <motion.div
