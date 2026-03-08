@@ -19,11 +19,11 @@ const Index = () => {
       <HeroSection />
       <ImpactSection />
       <CompetenciesSection />
+      <CertificationsSection />
       <JourneySection />
       <KeyProjectsSection />
       <ToolsSection />
       <AwardsSection />
-      <CertificationsSection />
       <BeyondSection />
       <ContactSection />
       <Footer />
