@@ -135,9 +135,10 @@ const HeroSection = () => {
           >
             <Linkedin size={18} /> Connect on LinkedIn
           </a>
-          {/* TODO: Replace # with your actual CV download link */}
+          {/* To update the CV: replace the file public/Aravind_CV.pdf in GitHub */}
           <a
-            href="#"
+            href="/Aravind_CV.pdf"
+            download="Aravind_Chandramohan_CV.pdf"
             className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg border border-accent/50 text-accent font-body font-semibold text-sm hover:bg-accent/10 transition-colors"
           >
             <Download size={18} /> Download CV
