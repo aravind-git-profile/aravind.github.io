@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import profilePhoto from "@/assets/profile-photo.png";
 
 const navItems = [
   { label: "Home", href: "#hero" },
@@ -15,6 +16,10 @@ const navItems = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const { scrollY } = useScroll();
+  const imageSize = useTransform(scrollY, [0, 300], [64, 32]);
+  const borderWidth = useTransform(scrollY, [0, 300], [3, 2]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -31,8 +36,19 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-16">
-        <a href="#hero" className="font-display text-xl font-bold text-gradient-blue">
-          AC
+        <a href="#hero" className="flex items-center gap-2 shrink-0">
+          <motion.img
+            src={profilePhoto}
+            alt="Aravind Chandramohan"
+            className="rounded-full object-cover border-primary"
+            style={{
+              width: imageSize,
+              height: imageSize,
+              borderWidth: borderWidth,
+              borderStyle: "solid",
+              borderColor: "hsl(210 100% 56%)",
+            }}
+          />
         </a>
 
         {/* Desktop */}
