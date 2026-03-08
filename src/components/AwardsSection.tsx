@@ -32,7 +32,7 @@ const awards = [
   {
     company: "BNP Paribas",
     logo: bnpLogo,
-    logoBg: "bg-white",
+    logoClass: "max-h-20 max-w-[240px]",
     icon: Award,
     accolades: [
       { label: "Golden Star · Rising Star", desc: "Prestigious recognition for outstanding individual performance" },
