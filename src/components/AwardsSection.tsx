@@ -21,7 +21,7 @@ const awards = [
   {
     company: "Uniphore",
     logo: uniphoreLogo,
-    logoBg: "bg-slate-800",
+    logoClass: "max-h-14 max-w-[180px]",
     icon: Trophy,
     accolades: [
       { label: "Award of Excellence ×3", desc: "Exceptional contributions in product innovation and collaborative cross-functional leadership" },
