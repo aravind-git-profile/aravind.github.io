@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import certsCollage from "@/assets/certifications-collage.jpg";
+import certsCollage from "@/assets/collage-09.jpg";
 import { ExternalLink } from "lucide-react";
 
 import badgePmp from "@/assets/badges/pmp.png";
