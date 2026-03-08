@@ -16,22 +16,22 @@ import logoExcel from "@/assets/tools/excel.svg";
 import logoConvoiq from "@/assets/tools/convoiq.png";
 
 const tools = [
-  { name: "Adobe Analytics", logo: logoAdobe, category: "Analytics" },
-  { name: "Tableau", logo: logoTableau, category: "Analytics" },
-  { name: "Quantum Metric", logo: logoQuantum, category: "Analytics" },
-  { name: "Evolv AI", logo: logoEvolv, category: "AI / Optimization" },
-  { name: "ConvoIQ", logo: logoConvoiq, category: "AI / Optimization" },
-  { name: "Pega", logo: logoPega, category: "Platforms" },
-  { name: "Smartsheet", logo: logoSmartsheet, category: "Platforms" },
+  { name: "Adobe Analytics", logo: logoAdobe, category: "Analytics, AI & Visualization" },
+  { name: "Tableau", logo: logoTableau, category: "Analytics, AI & Visualization" },
+  { name: "Quantum Metric", logo: logoQuantum, category: "Analytics, AI & Visualization" },
+  { name: "Evolv AI", logo: logoEvolv, category: "Analytics, AI & Visualization" },
+  { name: "ConvoIQ", logo: logoConvoiq, category: "Analytics, AI & Visualization" },
+  { name: "Pega", logo: logoPega, category: "Analytics, AI & Visualization" },
+  { name: "Advanced Excel", logo: logoExcel, category: "Analytics, AI & Visualization" },
+  { name: "Smartsheet", logo: logoSmartsheet, category: "Collaboration" },
   { name: "Jira", logo: logoJira, category: "Collaboration" },
   { name: "Confluence", logo: logoConfluence, category: "Collaboration" },
   { name: "Python", logo: logoPython, category: "Programming" },
   { name: "SQL", logo: logoSql, category: "Programming" },
   { name: "R Programming", logo: logoR, category: "Programming" },
-  { name: "Advanced Excel", logo: logoExcel, category: "Programming" },
 ];
 
-const categories = ["Analytics", "AI / Optimization", "Platforms", "Collaboration", "Programming"];
+const categories = ["Analytics, AI & Visualization", "Collaboration", "Programming"];
 
 const categoryColors: Record<string, string> = {
   "Analytics": "from-primary/20 to-primary/5",
