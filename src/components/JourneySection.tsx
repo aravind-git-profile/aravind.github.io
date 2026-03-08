@@ -125,32 +125,9 @@ const JourneySection = () => {
           {/* Vertical line */}
           <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
 
-          {timelineItems.map((exp, i) => {
-            const isWork = exp.type === "work";
-            const borderColor = isWork ? "border-primary/60" : "border-accent/60";
-            const dotColor = isWork ? "bg-primary" : "bg-accent";
-            const bulletColor = isWork ? "bg-primary/70" : "bg-accent/70";
-            const roleColor = isWork ? "text-primary" : "text-accent";
-            const cardBg = isWork
-              ? "bg-primary/[0.03] hover:bg-primary/[0.06]"
-              : "bg-accent/[0.03] hover:bg-accent/[0.06]";
-            const hoverShadow = isWork
-              ? "hover:shadow-[0_0_24px_hsl(var(--primary)/0.12)]"
-              : "hover:shadow-[0_0_24px_hsl(var(--accent)/0.12)]";
-
-            // Alternate sides: even index left, odd index right
-            const isLeft = i % 2 === 0;
-
-            return (
-              <motion.div
-                key={exp.company + exp.period}
-                initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
-                animate={inView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.5, delay: i * 0.15 }}
-                className={`relative mb-12 md:mb-16 ${
-                  isLeft ? "md:pr-[52%]" : "md:pl-[52%]"
-                } pl-16 md:pl-0`}
-              >
+          {timelineItems.map((exp, i) => (
+            <TimelineCard key={exp.company + exp.period} exp={exp} index={i} />
+          ))}
                 {/* Dot on timeline */}
                 <div
                   className={`absolute left-4 md:left-1/2 top-2 w-5 h-5 rounded-full ${dotColor} border-4 border-background md:-translate-x-1/2 z-10`}
