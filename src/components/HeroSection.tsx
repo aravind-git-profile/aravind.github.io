@@ -27,10 +27,16 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-body mb-6"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-body mb-6 animate-pulse-glow"
             >
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              Open to Opportunities
+              <span className="w-2 h-2 rounded-full bg-primary animate-ping" />
+              <span className="absolute w-2 h-2 rounded-full bg-primary" />
+              <motion.span
+                animate={{ opacity: [1, 0.5, 1] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              >
+                Open to Opportunities
+              </motion.span>
             </motion.div>
 
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4">
