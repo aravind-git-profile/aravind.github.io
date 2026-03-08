@@ -34,7 +34,7 @@ const HeroSection = () => {
             </motion.div>
 
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4">
-              <span className="text-foreground">Aravind</span>
+              <span className="text-gradient-gold">Aravind</span>
               <br />
               <span className="text-gradient-blue">Chandramohan</span>
             </h1>
