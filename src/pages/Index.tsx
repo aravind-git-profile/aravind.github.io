@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import ImpactSection from "@/components/ImpactSection";
 import CompetenciesSection from "@/components/CompetenciesSection";
 import JourneySection from "@/components/JourneySection";
+import KeyProjectsSection from "@/components/KeyProjectsSection";
 import ToolsSection from "@/components/ToolsSection";
 import CertificationsSection from "@/components/CertificationsSection";
 import BeyondSection from "@/components/BeyondSection";
