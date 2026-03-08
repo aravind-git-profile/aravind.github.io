@@ -52,12 +52,15 @@ const CertificationsSection = () => {
         {/* Certification badges grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
           {certifications.map((cert, i) => (
-            <motion.div
+            <motion.a
               key={cert.name}
+              href={cert.url}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="glass-card rounded-xl p-6 hover:glow-blue transition-all duration-300 group flex flex-col items-center text-center"
+              className="glass-card rounded-xl p-6 hover:glow-blue transition-all duration-300 group flex flex-col items-center text-center cursor-pointer"
             >
               <div className="w-20 h-20 rounded-full overflow-hidden mb-4 group-hover:scale-110 transition-transform flex items-center justify-center">
                 <img
@@ -69,7 +72,7 @@ const CertificationsSection = () => {
               <h3 className="font-body font-bold text-foreground text-lg">{cert.name}</h3>
               <p className="text-sm text-primary font-body">{cert.issuer}</p>
               <p className="text-xs text-muted-foreground mt-1">{cert.desc}</p>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
 
