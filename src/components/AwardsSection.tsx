@@ -22,6 +22,7 @@ const awards = [
   {
     company: "Uniphore",
     logo: uniphoreLogo,
+    logoBg: "bg-slate-800",
     logoClass: "max-h-14 max-w-[180px]",
     icon: Trophy,
     accolades: [
