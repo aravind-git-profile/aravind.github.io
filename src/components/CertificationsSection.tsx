@@ -1,4 +1,4 @@
-import { ExternalLink } from "lucide-react";
+
 
 import badgePmp from "@/assets/badges/pmp.png";
 import badgeCbap from "@/assets/badges/cbap.png";
