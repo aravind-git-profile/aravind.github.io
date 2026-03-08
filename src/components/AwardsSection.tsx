@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Award, Star, Trophy } from "lucide-react";
+import collage from "@/assets/collage-09.jpg";
 import verizonLogo from "@/assets/logos/verizon-wordmark.svg";
 import uniphoreLogo from "@/assets/logos/uniphore-white.png";
 import bnpLogo from "@/assets/logos/bnp-paribas-logo.png";
@@ -107,6 +108,21 @@ const AwardsSection = () => {
             );
           })}
         </div>
+
+        {/* Collage image */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.8, duration: 0.6 }}
+          className="relative rounded-2xl overflow-hidden mt-12"
+        >
+          <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 blur-xl" />
+          <img
+            src={collage}
+            alt="Certifications and Awards Collage"
+            className="relative rounded-2xl w-full object-cover max-h-[400px]"
+          />
+        </motion.div>
       </div>
     </section>
   );
