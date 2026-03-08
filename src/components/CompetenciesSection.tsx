@@ -34,7 +34,7 @@ const CompetenciesSection = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Core <span className="text-gradient-blue">Competencies</span>
+            <span className="text-gradient-gold">Core</span> <span className="text-gradient-blue">Competencies</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Where creativity meets strategy — bridging technical excellence with business impact
@@ -50,11 +50,11 @@ const CompetenciesSection = () => {
               transition={{ duration: 0.4, delay: i * 0.08 }}
               className="glass-card rounded-xl p-5 hover:border-primary/40 hover:glow-blue transition-all duration-300 group cursor-default"
             >
-              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary/20 transition-colors">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3 mx-auto group-hover:bg-primary/20 transition-colors">
                 <item.icon size={20} className="text-primary" />
               </div>
-              <h3 className="font-body font-semibold text-sm text-foreground mb-1">{item.title}</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
+              <h3 className="font-body font-semibold text-sm text-foreground mb-1 text-center">{item.title}</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed text-center">{item.desc}</p>
             </motion.div>
           ))}
         </div>
