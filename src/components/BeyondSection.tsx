@@ -1,35 +1,24 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
 import { Camera, Heart, Plane } from "lucide-react";
 import dronePhoto from "@/assets/drone-photo.jpg";
 
 const BeyondSection = () => {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
-
   return (
     <section id="beyond" className="section-padding">
-      <div className="max-w-7xl mx-auto" ref={ref}>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
+      <div className="max-w-7xl mx-auto">
+        <div data-aos="fade-up" className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             <span className="text-gradient-gold">Beyond the</span> <span className="text-gradient-blue">Boardroom</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Life beyond the professional arena — passions that fuel creativity and perspective
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Drone Photography */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.2 }}
+          <div
+            data-aos="fade-right"
+            data-aos-delay="100"
             className="glass-card rounded-2xl overflow-hidden group"
           >
             <div className="relative h-56 overflow-hidden">
@@ -57,13 +46,12 @@ const BeyondSection = () => {
                 always seeking the strategic, bird's-eye view before diving into execution.
               </p>
             </div>
-          </motion.div>
+          </div>
 
           {/* Civic Advocacy */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.3 }}
+          <div
+            data-aos="fade-left"
+            data-aos-delay="200"
             className="glass-card rounded-2xl overflow-hidden group"
           >
             <div className="relative h-56 bg-gradient-to-br from-primary/20 via-accent/10 to-teal/20 flex items-center justify-center">
@@ -86,7 +74,7 @@ const BeyondSection = () => {
                 for community welfare, social justice, and sustainable development.
               </p>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,5 +1,3 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
 import { Building2, GraduationCap } from "lucide-react";
 
 import verizonLogo from "@/assets/logos/verizon.svg";
@@ -91,9 +89,6 @@ const timelineItems = [
 type TimelineItem = typeof timelineItems[number];
 
 const TimelineCard = ({ exp, index }: { exp: TimelineItem; index: number }) => {
-  const cardRef = useRef(null);
-  const cardInView = useInView(cardRef, { once: true, margin: "-60px" });
-
   const isWork = exp.type === "work";
   const borderColor = isWork ? "border-primary/60" : "border-accent/60";
   const dotColor = isWork ? "bg-primary" : "bg-accent";
@@ -108,38 +103,27 @@ const TimelineCard = ({ exp, index }: { exp: TimelineItem; index: number }) => {
   const isLeft = index % 2 === 0;
 
   return (
-    <motion.div
-      ref={cardRef}
-      initial={{ opacity: 0, x: isLeft ? -60 : 60, y: 30 }}
-      animate={cardInView ? { opacity: 1, x: 0, y: 0 } : {}}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+    <div
+      data-aos={isLeft ? "fade-right" : "fade-left"}
+      data-aos-delay={index * 100}
       className={`relative mb-12 md:mb-16 ${
         isLeft ? "md:pr-[52%]" : "md:pl-[52%]"
       } pl-16 md:pl-0`}
     >
       {/* Dot on timeline */}
-      <motion.div
-        initial={{ scale: 0 }}
-        animate={cardInView ? { scale: 1 } : {}}
-        transition={{ duration: 0.4, delay: 0.2, type: "spring", stiffness: 300 }}
+      <div
         className={`absolute left-4 md:left-1/2 top-2 w-5 h-5 rounded-full ${dotColor} border-4 border-background md:-translate-x-1/2 z-10`}
       />
 
       {/* Connector line */}
-      <motion.div
-        initial={{ scaleX: 0 }}
-        animate={cardInView ? { scaleX: 1 } : {}}
-        transition={{ duration: 0.3, delay: 0.3 }}
-        className={`hidden md:block absolute top-[18px] h-px bg-border origin-center ${
+      <div
+        className={`hidden md:block absolute top-[18px] h-px bg-border ${
           isLeft ? "right-[48%] w-[4%]" : "left-[48%] w-[4%]"
         }`}
       />
 
       {/* Card */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={cardInView ? { opacity: 1, scale: 1 } : {}}
-        transition={{ duration: 0.5, delay: 0.15 }}
+      <div
         className={`rounded-xl p-6 border ${borderColor} ${cardBg} ${hoverShadow} transition-all duration-300 backdrop-blur-sm`}
       >
         <div className="flex items-center gap-3 mb-3">
@@ -176,38 +160,27 @@ const TimelineCard = ({ exp, index }: { exp: TimelineItem; index: number }) => {
         </p>
         <ul className="space-y-2">
           {exp.highlights.map((h, j) => (
-            <motion.li
+            <li
               key={j}
-              initial={{ opacity: 0, x: isLeft ? -15 : 15 }}
-              animate={cardInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.3, delay: 0.3 + j * 0.08 }}
               className="flex items-start gap-2 text-sm text-secondary-foreground"
             >
               <span
                 className={`w-1.5 h-1.5 rounded-full ${bulletColor} mt-1.5 shrink-0`}
               />
               {h}
-            </motion.li>
+            </li>
           ))}
         </ul>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 };
 
 const JourneySection = () => {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
-
   return (
     <section id="journey" className="section-padding">
-      <div className="max-w-5xl mx-auto" ref={ref}>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+      <div className="max-w-5xl mx-auto">
+        <div data-aos="fade-up" className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             <span className="text-gradient-gold">Professional</span>{" "}
             <span className="text-gradient-blue">Journey</span>
@@ -225,7 +198,7 @@ const JourneySection = () => {
               <span className="text-accent font-medium">Education</span>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Timeline */}
         <div className="relative">

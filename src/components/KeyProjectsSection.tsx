@@ -1,5 +1,3 @@
-import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
 import { Rocket, Brain, Bot, FileText, ShoppingCart, Package, Shield, Headphones, Globe, TrendingUp } from "lucide-react";
 import verizonLogo from "@/assets/logos/verizon.svg";
 import uniphoreLogo from "@/assets/logos/uniphore.png";
@@ -88,11 +86,10 @@ const uniphoreProjects: Project[] = [
   },
 ];
 
-const ProjectCard = ({ project, index, inView }: { project: Project; index: number; inView: boolean }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    animate={inView ? { opacity: 1, y: 0 } : {}}
-    transition={{ duration: 0.5, delay: 0.1 + index * 0.08 }}
+const ProjectCard = ({ project, index }: { project: Project; index: number }) => (
+  <div
+    data-aos="fade-up"
+    data-aos-delay={index * 80}
     className="group relative rounded-xl border border-border/60 bg-card/50 p-5 hover:border-primary/40 hover:bg-primary/[0.04] transition-all duration-300 hover:shadow-[0_0_20px_hsl(var(--primary)/0.1)]"
   >
     <div className="flex items-start gap-3 mb-3">
@@ -126,7 +123,7 @@ const ProjectCard = ({ project, index, inView }: { project: Project; index: numb
         </span>
       ))}
     </div>
-  </motion.div>
+  </div>
 );
 
 const CompanyProjectBlock = ({
@@ -135,22 +132,15 @@ const CompanyProjectBlock = ({
   logoBg,
   accentClass,
   projects,
-  inView,
 }: {
   company: string;
   logo: string;
   logoBg: string;
   accentClass: string;
   projects: Project[];
-  inView: boolean;
 }) => (
   <div className="mb-16 last:mb-0">
-    <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      animate={inView ? { opacity: 1, x: 0 } : {}}
-      transition={{ duration: 0.5 }}
-      className="flex items-center gap-3 mb-8"
-    >
+    <div data-aos="fade-right" className="flex items-center gap-3 mb-8">
       <div className={`w-10 h-10 rounded-lg ${logoBg} flex items-center justify-center overflow-hidden shrink-0 p-1`}>
         <img src={logo} alt={company} className="w-full h-full object-contain" />
       </div>
@@ -159,28 +149,20 @@ const CompanyProjectBlock = ({
         <p className="text-xs text-muted-foreground">Key Projects</p>
       </div>
       <div className={`flex-1 h-px ${accentClass} ml-4`} />
-    </motion.div>
+    </div>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
       {projects.map((project, i) => (
-        <ProjectCard key={project.title} project={project} index={i} inView={inView} />
+        <ProjectCard key={project.title} project={project} index={i} />
       ))}
     </div>
   </div>
 );
 
 const KeyProjectsSection = () => {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
-
   return (
     <section id="key-projects" className="section-padding">
-      <div className="max-w-6xl mx-auto" ref={ref}>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+      <div className="max-w-6xl mx-auto">
+        <div data-aos="fade-up" className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             <span className="text-gradient-gold">Key</span>{" "}
             <span className="text-gradient-blue">Projects</span>
@@ -188,7 +170,7 @@ const KeyProjectsSection = () => {
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Flagship initiatives driving measurable business outcomes through AI, analytics, and digital transformation
           </p>
-        </motion.div>
+        </div>
 
         <CompanyProjectBlock
           company="Verizon"
@@ -196,7 +178,6 @@ const KeyProjectsSection = () => {
           logoBg="bg-background"
           accentClass="bg-gradient-to-r from-primary/40 to-transparent"
           projects={verizonProjects}
-          inView={inView}
         />
 
         <CompanyProjectBlock
@@ -205,7 +186,6 @@ const KeyProjectsSection = () => {
           logoBg="bg-transparent"
           accentClass="bg-gradient-to-r from-accent/40 to-transparent"
           projects={uniphoreProjects}
-          inView={inView}
         />
       </div>
     </section>

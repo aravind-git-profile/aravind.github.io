@@ -1,5 +1,3 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
 import { Award, Star, Trophy } from "lucide-react";
 import collage from "@/assets/collage-09.jpg";
 import verizonLogo from "@/assets/logos/verizon-wordmark.svg";
@@ -49,18 +47,10 @@ const awards = [
 ];
 
 const AwardsSection = () => {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
-
   return (
     <section id="awards" className="section-padding bg-secondary/30">
-      <div className="max-w-7xl mx-auto" ref={ref}>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
+      <div className="max-w-7xl mx-auto">
+        <div data-aos="fade-up" className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             <span className="text-gradient-gold">Awards &</span>{" "}
             <span className="text-gradient-blue">Honours</span>
@@ -68,17 +58,16 @@ const AwardsSection = () => {
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Recognized across organizations for leadership, innovation, and delivering excellence
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-6">
           {awards.map((award, i) => {
             const Icon = award.icon;
             return (
-              <motion.div
+              <div
                 key={award.company}
-                initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: i * 0.15 }}
+                data-aos="fade-up"
+                data-aos-delay={i * 150}
                 className={`glass-card rounded-2xl p-6 border ${award.border} hover:glow-blue transition-all duration-300 flex flex-col`}
               >
                 {/* Company logo */}
@@ -104,25 +93,20 @@ const AwardsSection = () => {
                     </div>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>
 
         {/* Collage image */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.8, duration: 0.6 }}
-          className="relative rounded-2xl overflow-hidden mt-12"
-        >
+        <div data-aos="zoom-in" data-aos-delay="300" className="relative rounded-2xl overflow-hidden mt-12">
           <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 blur-xl" />
           <img
             src={collage}
             alt="Certifications and Awards Collage"
             className="relative rounded-2xl w-full object-cover max-h-[400px]"
           />
-        </motion.div>
+        </div>
       </div>
     </section>
   );
