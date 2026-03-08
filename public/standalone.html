@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ========== SEO: Update title & description ========== -->
+  <title>Aravind Chandramohan | Product &amp; Project Leadership</title>
+  <meta name="description" content="Results-driven Product, Program &amp; Project Management Professional with 11+ years of experience. PMP, CBAP, PSPO-II, SAFe-6 POPM certified.">
+  <meta name="author" content="Aravind Chandramohan" />
+
+  <!-- ========== OG / Social sharing: Replace image URLs ========== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Aravind Chandramohan | Product &amp; Project Leadership" />
+  <meta property="og:description" content="Results-driven Product, Program &amp; Project Management Professional with 11+ years of experience." />
+  <!-- PASTE YOUR OG IMAGE URL BELOW -->
+  <meta property="og:image" content="YOUR_OG_IMAGE_URL_HERE" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Aravind Chandramohan | Product &amp; Project Leadership" />
+  <meta name="twitter:description" content="Results-driven Product, Program &amp; Project Management Professional with 11+ years of experience." />
+  <meta name="twitter:image" content="YOUR_OG_IMAGE_URL_HERE" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* ========== DESIGN SYSTEM TOKENS ========== */
+    :root {
+      --background: 220 25% 7%;
+      --foreground: 210 20% 92%;
+      --card: 220 20% 11%;
+      --card-foreground: 210 20% 92%;
+      --primary: 210 100% 56%;
+      --primary-foreground: 220 25% 7%;
+      --secondary: 220 15% 18%;
+      --secondary-foreground: 210 20% 85%;
+      --muted: 220 15% 15%;
+      --muted-foreground: 215 15% 55%;
+      --accent: 45 100% 58%;
+      --accent-foreground: 220 25% 7%;
+      --border: 220 15% 20%;
+      --destructive: 0 84.2% 60.2%;
+      --teal: 175 60% 45%;
+      --gold-dim: 45 80% 45%;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; border-color: hsl(var(--border)); }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: hsl(var(--background));
+      color: hsl(var(--foreground));
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+    ::selection { background: hsl(210 100% 56% / 0.3); color: hsl(var(--foreground)); }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: hsl(var(--background)); }
+    ::-webkit-scrollbar-thumb { background: hsl(220 15% 25%); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: hsl(210 100% 56% / 0.5); }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    ul { list-style: none; }
+
+    /* ========== UTILITY CLASSES ========== */
+    .text-gradient-gold {
+      background: linear-gradient(135deg, hsl(45 100% 58%), hsl(35 100% 50%));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .text-gradient-blue {
+      background: linear-gradient(135deg, hsl(210 100% 56%), hsl(210 100% 65%));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .glass-card {
+      backdrop-filter: blur(12px);
+      background: hsl(220 20% 11% / 0.7);
+      border: 1px solid hsl(220 15% 25% / 0.5);
+    }
+    .glow-blue { box-shadow: 0 0 30px -5px hsl(210 100% 56% / 0.3); }
+    .section-padding { padding: 5rem 1rem; }
+    @media (min-width: 768px) { .section-padding { padding: 7rem 2rem; } }
+    .max-w-7xl { max-width: 80rem; margin: 0 auto; }
+    .max-w-6xl { max-width: 72rem; margin: 0 auto; }
+    .max-w-5xl { max-width: 64rem; margin: 0 auto; }
+    .max-w-4xl { max-width: 56rem; margin: 0 auto; }
+    .text-primary { color: hsl(var(--primary)); }
+    .text-accent { color: hsl(var(--accent)); }
+    .text-muted { color: hsl(var(--muted-foreground)); }
+    .text-fg { color: hsl(var(--foreground)); }
+    .bg-sec30 { background: hsl(var(--secondary) / 0.3); }
+
+    /* ========== NAVBAR ========== */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      transition: all 0.3s;
+    }
+    .navbar.scrolled {
+      backdrop-filter: blur(12px);
+      background: hsl(220 20% 11% / 0.7);
+      border-bottom: 1px solid hsl(220 15% 25% / 0.5);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .navbar-inner {
+      max-width: 80rem; margin: 0 auto; padding: 0 1rem;
+      display: flex; align-items: center; justify-content: space-between; height: 4rem;
+    }
+    /* PASTE YOUR PROFILE PHOTO URL in the <img> tag below */
+    .nav-photo {
+      width: 48px; height: 48px; border-radius: 50%; object-fit: cover;
+      border: 2px solid hsl(var(--primary)); transition: all 0.3s;
+    }
+    .navbar.scrolled .nav-photo { width: 32px; height: 32px; }
+    .nav-links { display: none; gap: 2rem; align-items: center; }
+    @media (min-width: 768px) { .nav-links { display: flex; } }
+    .nav-links a {
+      font-size: 0.875rem; color: hsl(var(--muted-foreground));
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: hsl(var(--primary)); }
+    .mobile-toggle { display: block; background: none; border: none; color: hsl(var(--foreground)); cursor: pointer; }
+    @media (min-width: 768px) { .mobile-toggle { display: none; } }
+    .mobile-menu {
+      display: none; flex-direction: column; gap: 1rem; padding: 1rem;
+      backdrop-filter: blur(12px); background: hsl(220 20% 11% / 0.9);
+      border-top: 1px solid hsl(var(--border));
+    }
+    .mobile-menu.open { display: flex; }
+    @media (min-width: 768px) { .mobile-menu { display: none !important; } }
+    .mobile-menu a { font-size: 0.875rem; color: hsl(var(--muted-foreground)); }
+
+    /* ========== HERO ========== */
+    .hero {
+      position: relative; min-height: 100vh; display: flex; align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+    }
+    /* PASTE YOUR HERO BACKGROUND IMAGE URL in the <img> tag */
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.4; }
+    .hero-bg .overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, hsl(var(--background) / 0.8), hsl(var(--background) / 0.6), hsl(var(--background)));
+    }
+    .hero-content {
+      position: relative; z-index: 10; max-width: 64rem; margin: 0 auto;
+      padding: 8rem 1rem 4rem; text-align: center; width: 100%;
+    }
+    .badge-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin-bottom: 2rem; }
+    .badge-pill {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.375rem 1rem; border-radius: 9999px;
+      border: 1px solid hsl(var(--primary) / 0.3);
+      background: hsl(var(--primary) / 0.1);
+      color: hsl(var(--primary)); font-size: 0.875rem;
+    }
+    .pulse-dot {
+      position: relative; width: 8px; height: 8px;
+    }
+    .pulse-dot span {
+      position: absolute; width: 100%; height: 100%; border-radius: 50%;
+      background: hsl(var(--primary));
+    }
+    .pulse-dot .ping { animation: ping 1.5s infinite; }
+    @keyframes ping { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(2); opacity: 0; } }
+
+    .hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem; }
+    .hero .subtitle {
+      font-size: clamp(1.125rem, 3vw, 1.5rem); color: hsl(var(--accent));
+      font-family: 'Playfair Display', serif; font-style: italic; margin-bottom: 1.5rem;
+    }
+    .hero .summary {
+      color: hsl(var(--muted-foreground)); font-size: 1rem;
+      max-width: 48rem; margin: 0 auto 2.5rem; line-height: 1.7;
+    }
+    .stats-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-bottom: 2.5rem; }
+    .stat-item { display: flex; align-items: center; gap: 0.75rem; }
+    .stat-icon {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: hsl(var(--primary) / 0.1);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .stat-label { font-weight: 700; font-size: 0.875rem; color: hsl(var(--foreground)); }
+    .stat-sub { font-size: 0.75rem; color: hsl(var(--muted-foreground)); }
+
+    .contact-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 2.5rem; }
+    .contact-chip {
+      display: flex; align-items: center; gap: 0.375rem; padding: 0.375rem 0.75rem;
+      border-radius: 9999px; font-size: 0.75rem;
+      backdrop-filter: blur(12px); background: hsl(220 20% 11% / 0.7);
+      border: 1px solid hsl(220 15% 25% / 0.5); color: hsl(var(--muted-foreground));
+    }
+
+    .cta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.875rem 2rem; border-radius: 0.5rem;
+      background: hsl(var(--primary)); color: hsl(var(--primary-foreground));
+      font-weight: 600; font-size: 0.875rem; border: none; cursor: pointer;
+      box-shadow: 0 0 30px -5px hsl(210 100% 56% / 0.3);
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: hsl(210 100% 65%); }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.875rem 2rem; border-radius: 0.5rem;
+      border: 1px solid hsl(var(--accent) / 0.5); color: hsl(var(--accent));
+      font-weight: 600; font-size: 0.875rem; background: transparent; cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-outline:hover { background: hsl(var(--accent) / 0.1); }
+
+    /* ========== IMPACT ========== */
+    .counter-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    @media (min-width: 1024px) { .counter-grid { grid-template-columns: repeat(4, 1fr); } }
+    .counter-card {
+      border-radius: 0.75rem; padding: 1.5rem 2rem; text-align: center;
+      transition: all 0.3s;
+    }
+    .counter-card:hover { border-color: hsl(var(--primary) / 0.4); }
+    .counter-value { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; }
+    .impact-highlights { display: grid; gap: 1rem; margin-top: 2rem; }
+    @media (min-width: 768px) { .impact-highlights { grid-template-columns: repeat(3, 1fr); } }
+    .impact-highlight {
+      border-radius: 0.5rem; padding: 1.25rem; display: flex; align-items: center; gap: 1rem;
+    }
+    .impact-highlight .stat { font-size: 1.5rem; font-family: 'Playfair Display', serif; font-weight: 700; color: hsl(var(--primary)); }
+    .pillars { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2rem; }
+    .pillar {
+      border-radius: 9999px; padding: 0.75rem 1.5rem; font-size: 0.875rem; font-weight: 600;
+      color: hsl(var(--primary)); border: 1px solid hsl(var(--primary) / 0.3);
+      display: flex; align-items: center; gap: 0.5rem; cursor: default;
+      transition: all 0.3s;
+    }
+    .pillar:hover { border-color: hsl(var(--primary) / 0.6); box-shadow: 0 0 20px hsl(var(--primary) / 0.15); }
+
+    /* ========== COMPETENCIES ========== */
+    .comp-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+    @media (min-width: 768px) { .comp-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 1024px) { .comp-grid { grid-template-columns: repeat(4, 1fr); } }
+    .comp-card {
+      border-radius: 0.75rem; padding: 1.25rem; text-align: center;
+      transition: all 0.3s; cursor: default;
+    }
+    .comp-card:hover { border-color: hsl(var(--primary) / 0.4); box-shadow: 0 0 30px -5px hsl(210 100% 56% / 0.3); }
+    .comp-icon {
+      width: 40px; height: 40px; border-radius: 0.5rem;
+      background: hsl(var(--primary) / 0.1);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 0.75rem;
+    }
+    .comp-title { font-weight: 600; font-size: 0.875rem; color: hsl(var(--foreground)); margin-bottom: 0.25rem; }
+    .comp-desc { font-size: 0.75rem; color: hsl(var(--muted-foreground)); line-height: 1.5; }
+
+    /* ========== CERTIFICATIONS ========== */
+    .cert-grid { display: grid; grid-template-columns: repeat(1, 1fr); gap: 1.25rem; margin-bottom: 3rem; }
+    @media (min-width: 640px) { .cert-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .cert-grid { grid-template-columns: repeat(3, 1fr); } }
+    .cert-card {
+      border-radius: 0.75rem; padding: 1.5rem; display: flex; flex-direction: column;
+      align-items: center; text-align: center; transition: all 0.3s; cursor: pointer;
+    }
+    .cert-card:hover { box-shadow: 0 0 30px -5px hsl(210 100% 56% / 0.3); }
+    /* PASTE YOUR CERTIFICATION BADGE IMAGE URLs in the <img> tags */
+    .cert-badge {
+      width: 80px; height: 80px; border-radius: 50%; overflow: hidden;
+      margin-bottom: 1rem; transition: transform 0.3s;
+    }
+    .cert-card:hover .cert-badge { transform: scale(1.1); }
+    .cert-badge img { width: 100%; height: 100%; object-fit: contain; }
+    .cert-name { font-weight: 700; font-size: 1.125rem; color: hsl(var(--foreground)); }
+    .cert-issuer { font-size: 0.875rem; color: hsl(var(--primary)); }
+    .cert-desc { font-size: 0.75rem; color: hsl(var(--muted-foreground)); margin-top: 0.25rem; }
+
+    /* ========== JOURNEY / TIMELINE ========== */
+    .timeline { position: relative; }
+    .timeline-line {
+      position: absolute; left: 1.5rem; top: 0; bottom: 0; width: 1px;
+      background: hsl(var(--border));
+    }
+    @media (min-width: 768px) { .timeline-line { left: 50%; transform: translateX(-0.5px); } }
+    .timeline-item { position: relative; margin-bottom: 3rem; padding-left: 4rem; }
+    @media (min-width: 768px) {
+      .timeline-item { padding-left: 0; }
+      .timeline-item:nth-child(odd) { padding-right: 52%; }
+      .timeline-item:nth-child(even) { padding-left: 52%; }
+    }
+    .timeline-dot {
+      position: absolute; left: 0.65rem; top: 0.5rem; width: 20px; height: 20px;
+      border-radius: 50%; border: 4px solid hsl(var(--background)); z-index: 10;
+    }
+    @media (min-width: 768px) { .timeline-dot { left: 50%; transform: translateX(-50%); } }
+    .dot-work { background: hsl(var(--primary)); }
+    .dot-edu { background: hsl(var(--accent)); }
+    .timeline-card {
+      border-radius: 0.75rem; padding: 1.5rem; backdrop-filter: blur(4px);
+      transition: all 0.3s;
+    }
+    .timeline-card.work {
+      border: 1px solid hsl(var(--primary) / 0.6);
+      background: hsl(var(--primary) / 0.03);
+    }
+    .timeline-card.work:hover {
+      background: hsl(var(--primary) / 0.06);
+      box-shadow: 0 0 24px hsl(var(--primary) / 0.12);
+    }
+    .timeline-card.edu {
+      border: 1px solid hsl(var(--accent) / 0.6);
+      background: hsl(var(--accent) / 0.03);
+    }
+    .timeline-card.edu:hover {
+      background: hsl(var(--accent) / 0.06);
+      box-shadow: 0 0 24px hsl(var(--accent) / 0.12);
+    }
+    .tl-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
+    /* PASTE YOUR COMPANY LOGO URLs in the <img> tags */
+    .tl-logo {
+      width: 40px; height: 40px; border-radius: 0.5rem; overflow: hidden;
+      display: flex; align-items: center; justify-content: center; padding: 4px; flex-shrink: 0;
+    }
+    .tl-logo img { width: 100%; height: 100%; object-fit: contain; }
+    .tl-period { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: hsl(var(--muted-foreground)); }
+    .tl-company { font-family: 'Playfair Display', serif; font-size: 1.125rem; font-weight: 700; }
+    .tl-role { font-size: 0.875rem; font-weight: 500; margin-bottom: 0.5rem; }
+    .tl-role.work-role { color: hsl(var(--primary)); }
+    .tl-role.edu-role { color: hsl(var(--accent)); }
+    .tl-location { font-size: 0.75rem; color: hsl(var(--muted-foreground)); margin-bottom: 0.75rem; }
+    .tl-highlights li {
+      display: flex; align-items: flex-start; gap: 0.5rem;
+      font-size: 0.875rem; color: hsl(var(--secondary-foreground)); margin-bottom: 0.5rem;
+    }
+    .tl-bullet { width: 6px; height: 6px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+    .bullet-work { background: hsl(var(--primary) / 0.7); }
+    .bullet-edu { background: hsl(var(--accent) / 0.7); }
+
+    /* ========== KEY PROJECTS ========== */
+    .project-block { margin-bottom: 4rem; }
+    .project-block-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem; }
+    .project-block-line { flex: 1; height: 1px; margin-left: 1rem; }
+    .project-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+    @media (min-width: 768px) { .project-grid { grid-template-columns: repeat(2, 1fr); } }
+    .project-card {
+      border-radius: 0.75rem; border: 1px solid hsl(var(--border) / 0.6);
+      background: hsl(var(--card) / 0.5); padding: 1.25rem;
+      transition: all 0.3s;
+    }
+    .project-card:hover {
+      border-color: hsl(var(--primary) / 0.4);
+      background: hsl(var(--primary) / 0.04);
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.1);
+    }
+    .project-header { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.75rem; }
+    .project-icon {
+      width: 32px; height: 32px; border-radius: 0.5rem; flex-shrink: 0;
+      background: hsl(var(--primary) / 0.1); color: hsl(var(--primary));
+      display: flex; align-items: center; justify-content: center;
+    }
+    .project-title { font-family: 'Playfair Display', serif; font-size: 0.875rem; font-weight: 700; padding-top: 4px; line-height: 1.3; }
+    .project-summary { font-size: 0.75rem; color: hsl(var(--muted-foreground)); line-height: 1.6; margin-bottom: 0.75rem; }
+    .project-wins { display: flex; flex-wrap: wrap; gap: 0.375rem; margin-bottom: 0.75rem; }
+    .win-badge {
+      display: inline-flex; align-items: center; padding: 0.125rem 0.5rem;
+      border-radius: 9999px; font-family: 'JetBrains Mono', monospace;
+      font-size: 0.625rem; font-weight: 600;
+      background: hsl(var(--accent) / 0.15); color: hsl(var(--accent));
+      border: 1px solid hsl(var(--accent) / 0.2);
+    }
+    .project-tools { display: flex; flex-wrap: wrap; gap: 0.25rem; }
+    .tool-tag {
+      font-size: 0.625rem; color: hsl(var(--muted-foreground) / 0.7);
+      background: hsl(var(--muted) / 0.5); padding: 0.125rem 0.375rem; border-radius: 0.25rem;
+    }
+
+    /* ========== TOOLS ========== */
+    .tools-category { margin-bottom: 2rem; }
+    .tools-category h3 {
+      font-family: 'Inter', sans-serif; font-size: 0.75rem; text-transform: uppercase;
+      letter-spacing: 0.15em; color: hsl(var(--muted-foreground)); margin-bottom: 1rem; padding-left: 0.25rem;
+    }
+    .tools-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    @media (min-width: 640px) { .tools-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 768px) { .tools-grid { grid-template-columns: repeat(4, 1fr); } }
+    @media (min-width: 1024px) { .tools-grid { grid-template-columns: repeat(5, 1fr); } }
+    /* PASTE YOUR TOOL LOGO URLs in the <img> tags */
+    .tool-card {
+      border-radius: 0.75rem; padding: 1.25rem;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; gap: 0.75rem; cursor: default;
+      transition: all 0.3s;
+    }
+    .tool-card:hover { border-color: hsl(var(--primary) / 0.3); transform: translateY(-4px) scale(1.04); }
+    .tool-logo { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s; }
+    .tool-card:hover .tool-logo { transform: scale(1.1); }
+    .tool-logo img { width: 100%; height: 100%; object-fit: contain; }
+    .tool-name { font-size: 0.875rem; font-weight: 500; color: hsl(var(--foreground)); line-height: 1.3; }
+
+    /* ========== AWARDS ========== */
+    .awards-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+    @media (min-width: 768px) { .awards-grid { grid-template-columns: repeat(3, 1fr); } }
+    .award-card {
+      border-radius: 1rem; padding: 1.5rem; display: flex; flex-direction: column;
+      transition: all 0.3s;
+    }
+    .award-card:hover { box-shadow: 0 0 30px -5px hsl(210 100% 56% / 0.3); }
+    /* PASTE YOUR COMPANY AWARD LOGO URLs in the <img> tags */
+    .award-logo-box {
+      width: 100%; height: 5rem; border-radius: 0.5rem;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.25rem; padding: 0 1rem;
+    }
+    .award-logo-box img { max-height: 56px; max-width: 180px; object-fit: contain; }
+    .award-icon {
+      width: 40px; height: 40px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .accolade-label { font-weight: 700; font-size: 0.875rem; color: hsl(var(--foreground)); }
+    .accolade-desc { font-size: 0.75rem; color: hsl(var(--muted-foreground)); margin-top: 0.25rem; line-height: 1.5; }
+    .awards-collage {
+      position: relative; border-radius: 1rem; overflow: hidden; margin-top: 3rem;
+    }
+    /* PASTE YOUR AWARDS COLLAGE IMAGE URL in the <img> tag */
+    .awards-collage img { width: 100%; object-fit: cover; max-height: 400px; border-radius: 1rem; }
+    .awards-collage .glow-overlay {
+      position: absolute; inset: -4px; border-radius: 1rem;
+      background: linear-gradient(to right, hsl(var(--primary) / 0.2), hsl(var(--accent) / 0.2), hsl(var(--primary) / 0.2));
+      filter: blur(16px);
+    }
+
+    /* ========== BEYOND ========== */
+    .beyond-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+    @media (min-width: 768px) { .beyond-grid { grid-template-columns: repeat(2, 1fr); } }
+    .beyond-card { border-radius: 1rem; overflow: hidden; }
+    /* PASTE YOUR DRONE PHOTO URL in the <img> tag */
+    .beyond-img { position: relative; height: 14rem; overflow: hidden; }
+    .beyond-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.7s;
+    }
+    .beyond-card:hover .beyond-img img { transform: scale(1.05); }
+    .beyond-img .img-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, hsl(var(--card)), transparent);
+    }
+    .beyond-img .img-label {
+      position: absolute; bottom: 1rem; left: 1rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .beyond-img .img-label-icon {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: hsl(var(--primary) / 0.2); backdrop-filter: blur(4px);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .beyond-body { padding: 1.5rem; }
+    .beyond-body h3 {
+      font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700;
+      margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;
+    }
+    .beyond-body p { font-size: 0.875rem; color: hsl(var(--muted-foreground)); line-height: 1.7; }
+    .civic-visual {
+      position: relative; height: 14rem; display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, hsl(var(--primary) / 0.2), hsl(var(--accent) / 0.1), hsl(var(--teal) / 0.2));
+    }
+    .civic-visual .quote {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: 1.125rem; color: hsl(var(--foreground) / 0.8); text-align: center;
+    }
+
+    /* ========== CONTACT ========== */
+    .contact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin-bottom: 3rem; }
+    @media (min-width: 640px) { .contact-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .contact-grid { grid-template-columns: repeat(4, 1fr); } }
+    .contact-card {
+      border-radius: 0.75rem; padding: 1.25rem; text-align: center;
+      transition: all 0.3s;
+    }
+    .contact-card:hover { border-color: hsl(var(--primary) / 0.4); }
+    .contact-card-icon { margin: 0 auto 0.75rem; transition: transform 0.3s; }
+    .contact-card:hover .contact-card-icon { transform: scale(1.1); }
+    .contact-card-label { font-size: 0.875rem; color: hsl(var(--foreground)); }
+    .contact-card-value { font-size: 0.75rem; color: hsl(var(--muted-foreground)); margin-top: 0.25rem; }
+    /* PASTE YOUR COVER BANNER IMAGE URL in the <img> tag */
+    .cover-banner { position: relative; border-radius: 1rem; overflow: hidden; margin-bottom: 3rem; }
+    .cover-banner img { width: 100%; object-fit: cover; border-radius: 1rem; }
+    .cover-banner .glow-overlay {
+      position: absolute; inset: -4px; border-radius: 1rem;
+      background: linear-gradient(to right, hsl(var(--primary) / 0.2), hsl(var(--accent) / 0.2), hsl(var(--primary) / 0.2));
+      filter: blur(16px);
+    }
+    .industry-badges, .cert-badges-bottom { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
+    .industry-badge {
+      padding: 0.375rem 1rem; border-radius: 9999px; font-size: 0.75rem;
+      border: 1px solid hsl(var(--border)); color: hsl(var(--muted-foreground));
+    }
+    .cert-badge-small {
+      padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem;
+      background: hsl(var(--primary) / 0.1); color: hsl(var(--primary));
+      border: 1px solid hsl(var(--primary) / 0.2);
+    }
+
+    /* ========== FOOTER ========== */
+    .footer {
+      padding: 2rem 1rem; border-top: 1px solid hsl(var(--border));
+    }
+    .footer-inner {
+      max-width: 80rem; margin: 0 auto;
+      display: flex; flex-direction: column; align-items: center; gap: 1rem;
+      font-size: 0.875rem; color: hsl(var(--muted-foreground));
+    }
+    @media (min-width: 768px) { .footer-inner { flex-direction: row; justify-content: space-between; } }
+
+    /* ========== BACK TO TOP ========== */
+    .back-to-top {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 50;
+      width: 48px; height: 48px; border-radius: 50%;
+      background: hsl(var(--primary)); color: hsl(var(--primary-foreground));
+      display: none; align-items: center; justify-content: center;
+      border: none; cursor: pointer;
+      box-shadow: 0 0 30px -5px hsl(210 100% 56% / 0.3);
+      transition: background 0.2s;
+    }
+    .back-to-top.visible { display: flex; }
+    .back-to-top:hover { background: hsl(210 100% 65%); }
+
+    /* ========== SECTION HEADERS (shared) ========== */
+    .section-header { text-align: center; margin-bottom: 3rem; }
+    .section-header h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 1rem; }
+    .section-header p { color: hsl(var(--muted-foreground)); max-width: 42rem; margin: 0 auto; }
+    .section-subtext { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: hsl(var(--muted-foreground)); margin-bottom: 0.75rem; }
+    .legend { display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin-top: 1rem; }
+    .legend-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 500; }
+  </style>
+</head>
+
+<body>
+
+<!-- ================================================================ -->
+<!--                         NAVIGATION                               -->
+<!-- ================================================================ -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="#hero">
+      <!-- PASTE YOUR PROFILE PHOTO URL below (src="...") -->
+      <img src="YOUR_PROFILE_PHOTO_URL" alt="Aravind Chandramohan" class="nav-photo" />
+    </a>
+    <div class="nav-links">
+      <a href="#hero">Home</a>
+      <a href="#impact">Impact</a>
+      <a href="#competencies">Competencies</a>
+      <a href="#journey">Journey</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#beyond">Beyond</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="mobile-toggle" onclick="document.getElementById('mobile-menu').classList.toggle('open')">
+      <i data-lucide="menu" style="width:24px;height:24px"></i>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#hero" onclick="this.parentElement.classList.remove('open')">Home</a>
+    <a href="#impact" onclick="this.parentElement.classList.remove('open')">Impact</a>
+    <a href="#competencies" onclick="this.parentElement.classList.remove('open')">Competencies</a>
+    <a href="#journey" onclick="this.parentElement.classList.remove('open')">Journey</a>
+    <a href="#certifications" onclick="this.parentElement.classList.remove('open')">Certifications</a>
+    <a href="#beyond" onclick="this.parentElement.classList.remove('open')">Beyond</a>
+    <a href="#contact" onclick="this.parentElement.classList.remove('open')">Contact</a>
+  </div>
+</nav>
+
+<!-- ================================================================ -->
+<!--                          HERO SECTION                            -->
+<!-- ================================================================ -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <!-- PASTE YOUR HERO BACKGROUND IMAGE URL below -->
+    <img src="YOUR_HERO_BG_IMAGE_URL" alt="" />
+    <div class="overlay"></div>
+  </div>
+  <div class="hero-content">
+    <!-- Availability badges -->
+    <div class="badge-row" data-aos="fade-up">
+      <div class="badge-pill">
+        <div class="pulse-dot"><span class="ping"></span><span></span></div>
+        Open to Opportunities
+      </div>
+      <div class="badge-pill">
+        <i data-lucide="globe" style="width:14px;height:14px;color:hsl(var(--primary))"></i>
+        Global Mobility — Ready to Relocate
+      </div>
+      <div class="badge-pill">
+        <i data-lucide="calendar-check" style="width:14px;height:14px;color:hsl(var(--primary))"></i>
+        Available for Immediate Joining
+      </div>
+    </div>
+
+    <!-- Name -->
+    <h1 data-aos="fade-up" data-aos-delay="100">
+      <span class="text-gradient-gold">Aravind</span> <span class="text-gradient-blue">Chandramohan</span>
+    </h1>
+
+    <p class="subtitle" data-aos="fade-up" data-aos-delay="200">Product · Program · Project Leadership</p>
+
+    <p class="summary" data-aos="fade-up" data-aos-delay="300">
+      Transforming business challenges into clear, actionable solutions and executing them with excellence.
+      11+ years driving AI-enabled digital transformation, analytics-led strategy & operational excellence
+      across Telecom, Banking & Technology.
+    </p>
+
+    <!-- Quick stats -->
+    <div class="stats-row" data-aos="fade-up" data-aos-delay="400">
+      <div class="stat-item">
+        <div class="stat-icon"><i data-lucide="briefcase" style="width:18px;height:18px;color:hsl(var(--primary))"></i></div>
+        <div><div class="stat-label">11+ Years</div><div class="stat-sub">Experience</div></div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon"><i data-lucide="award" style="width:18px;height:18px;color:hsl(var(--primary))"></i></div>
+        <div><div class="stat-label">6+ Certs</div><div class="stat-sub">PMP, CBAP, PSPO...</div></div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon"><i data-lucide="zap" style="width:18px;height:18px;color:hsl(var(--primary))"></i></div>
+        <div><div class="stat-label">$380M+</div><div class="stat-sub">Revenue Impact</div></div>
+      </div>
+    </div>
+
+    <!-- Contact chips -->
+    <div class="contact-chips" data-aos="fade-up" data-aos-delay="500">
+      <!-- PASTE YOUR EMAIL below -->
+      <span class="contact-chip"><i data-lucide="mail" style="width:12px;height:12px;color:hsl(var(--primary))"></i> mail.aravind.c@gmail.com</span>
+      <!-- PASTE YOUR PHONE below -->
+      <span class="contact-chip"><i data-lucide="phone" style="width:12px;height:12px;color:hsl(var(--primary))"></i> +91-7010967137</span>
+      <!-- PASTE YOUR LOCATION below -->
+      <span class="contact-chip"><i data-lucide="map-pin" style="width:12px;height:12px;color:hsl(var(--primary))"></i> Chennai, India</span>
+    </div>
+
+    <!-- CTA Buttons -->
+    <div class="cta-row" data-aos="fade-up" data-aos-delay="600">
+      <!-- PASTE YOUR LINKEDIN PROFILE URL below -->
+      <a href="https://www.linkedin.com/in/aravindchandramohan/" target="_blank" rel="noopener noreferrer" class="btn-primary">
+        <i data-lucide="linkedin" style="width:18px;height:18px"></i> Connect on LinkedIn
+      </a>
+      <!-- PASTE YOUR CV/RESUME FILE PATH below -->
+      <a href="Aravind_CV.pdf" download="Aravind_Chandramohan_CV.pdf" class="btn-outline">
+        <i data-lucide="download" style="width:18px;height:18px"></i> Download CV
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!--                        IMPACT SECTION                            -->
+<!-- ================================================================ -->
+<section id="impact" class="section-padding">
+  <div class="max-w-7xl">
+    <div class="section-header" data-aos="fade-up">
+      <h2><span class="text-gradient-gold">The Impact</span> <span class="text-gradient-blue">Numbers</span></h2>
+      <p>Driving measurable outcomes from agile startups to Fortune 500 enterprises — spanning IT, Banking, Analytics & Telecommunications</p>
+    </div>
+
+    <div class="counter-grid">
+      <div class="glass-card counter-card" data-aos="fade-up" data-aos-delay="0">
+        <div style="margin-bottom:1rem"><i data-lucide="briefcase" style="width:32px;height:32px;color:hsl(var(--primary))"></i></div>
+        <div class="counter-value text-primary" data-target="11">0</div><span class="counter-value text-primary">+</span>
+        <p class="text-muted" style="font-size:0.875rem;margin-top:0.5rem">Years Experience</p>
+      </div>
+      <div class="glass-card counter-card" data-aos="fade-up" data-aos-delay="100">
+        <div style="margin-bottom:1rem"><i data-lucide="award" style="width:32px;height:32px;color:hsl(var(--accent))"></i></div>
+        <div class="counter-value text-accent" data-target="6">0</div><span class="counter-value text-accent">+</span>
+        <p class="text-muted" style="font-size:0.875rem;margin-top:0.5rem">Global Certifications</p>
+      </div>
+      <div class="glass-card counter-card" data-aos="fade-up" data-aos-delay="200">
+        <div style="margin-bottom:1rem"><i data-lucide="dollar-sign" style="width:32px;height:32px;color:hsl(var(--primary))"></i></div>
+        <span class="counter-value text-primary">$</span><div class="counter-value text-primary" data-target="380" style="display:inline">0</div><span class="counter-value text-primary">M+</span>
+        <p class="text-muted" style="font-size:0.875rem;margin-top:0.5rem">Revenue Impact</p>
+      </div>
+      <div class="glass-card counter-card" data-aos="fade-up" data-aos-delay="300">
+        <div style="margin-bottom:1rem"><i data-lucide="users" style="width:32px;height:32px;color:hsl(var(--accent))"></i></div>
+        <div class="counter-value text-accent" data-target="20">0</div><span class="counter-value text-accent">+</span>
+        <p class="text-muted" style="font-size:0.875rem;margin-top:0.5rem">Team Members Led</p>
+      </div>
+    </div>
+
+    <div class="impact-highlights" data-aos="fade-up" data-aos-delay="400">
+      <div class="glass-card impact-highlight"><span class="stat">50%</span><span class="text-muted" style="font-size:0.875rem">Efficiency gain via Lean Six Sigma automation</span></div>
+      <div class="glass-card impact-highlight"><span class="stat">70-80%</span><span class="text-muted" style="font-size:0.875rem">Reduction in After-Call Work</span></div>
+      <div class="glass-card impact-highlight"><span class="stat">25%</span><span class="text-muted" style="font-size:0.875rem">Project tracking effort saved</span></div>
+    </div>
+
+    <div class="pillars" data-aos="fade-up" data-aos-delay="500">
+      <span class="glass-card pillar">🎯 Strategic Planning</span>
+      <span class="glass-card pillar">💡 Innovation</span>
+      <span class="glass-card pillar">⚡ Process Efficiency</span>
+      <span class="glass-card pillar">🚀 Change Leadership</span>
+      <span class="glass-card pillar">🔄 Digital Transformation</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!--                     COMPETENCIES SECTION                         -->
+<!-- ================================================================ -->
+<section id="competencies" class="section-padding bg-sec30">
+  <div class="max-w-7xl">
+    <div class="section-header" data-aos="fade-up">
+      <h2><span class="text-gradient-gold">Core</span> <span class="text-gradient-blue">Competencies</span></h2>
+      <p>Where creativity meets strategy — bridging technical excellence with business impact</p>
+    </div>
+
+    <div class="comp-grid">
+      <div class="glass-card comp-card" data-aos="fade-up" data-aos-delay="0"><div class="comp-icon"><i data-lucide="target" style="width:20px;height:20px;color:hsl(var(--primary))"></i></div><div class="comp-title">Product Governance & Strategy</div><div class="comp-desc">End-to-end lifecycle ownership, roadmap discipline & enterprise alignment</div></div>
+      <div class="glass-card comp-card" data-aos="fade-up" data-aos-delay="50"><div class="comp-icon"><i data-lucide="brain" style="width:20px;height:20px;color:hsl(var(--primary))"></i></div><div class="comp-title">AI-Enabled Transformation</div><div class="comp-desc">Orchestrating AI-driven personalization & scalable digital solutions</div></div>
+      <div class="glass-card comp-card" data-aos="fade-up" data-aos-delay="100"><div class="comp-icon"><i data-lucide="bar-chart-3" style="width:20px;height:20px;color:hsl(var(--primary))"></i></div><div class="comp-title">Analytics & Revenue Growth</div><div class="comp-desc">Data-driven decision frameworks converting insights into revenue impact</div></div>
+      <div class="glass-card comp-card" data-aos="fade-up" data-aos-delay="150"><div class="comp-icon"><i data-lucide="settings" style="width:20px;height:20px;color:hsl(var(--primary))"></i></div><div class="comp-title">Operational Excellence</div><div class="comp-desc">Six Sigma workflows reducing friction & improving delivery predictability</div></div>
+      <div class="glass-card comp-card" data-aos="fade-up" data-aos-delay="200"><div class="comp-icon"><i data-lucide="users" style="width:20px;height:20px;color:hsl(var(--primary))"></i></div><div class="comp-title">Cross-Functional Leadership</div><div class="comp-desc">Guiding 20+ interdisciplinary team members across functions</div></div>
+      <div class="glass-card comp-card" data-aos="fade-up" data-aos-delay="250"><div class="comp-icon"><i data-lucide="megaphone" style="width:20px;height:20px;color:hsl(var(--primary))"></i></div><div class="comp-title">Change Leadership</div><div class="comp-desc">Enterprise change initiatives & mentoring high-performing teams</div></div>
+      <div class="glass-card comp-card" data-aos="fade-up" data-aos-delay="300"><div class="comp-icon"><i data-lucide="database" style="width:20px;height:20px;color:hsl(var(--primary))"></i></div><div class="comp-title">Business Intelligence</div><div class="comp-desc">Data visualization, generative AI & market research insights</div></div>
+      <div class="glass-card comp-card" data-aos="fade-up" data-aos-delay="350"><div class="comp-icon"><i data-lucide="line-chart" style="width:20px;height:20px;color:hsl(var(--primary))"></i></div><div class="comp-title">Program Execution</div><div class="comp-desc">Portfolio prioritization & decision frameworks at scale</div></div>
+      <div class="glass-card comp-card" data-aos="fade-up" data-aos-delay="400"><div class="comp-icon"><i data-lucide="lightbulb" style="width:20px;height:20px;color:hsl(var(--primary))"></i></div><div class="comp-title">Product Innovation</div><div class="comp-desc">AI/ML recommendation engines & hyper-personalization platforms</div></div>
+      <div class="glass-card comp-card" data-aos="fade-up" data-aos-delay="450"><div class="comp-icon"><i data-lucide="shield" style="width:20px;height:20px;color:hsl(var(--primary))"></i></div><div class="comp-title">Stakeholder Arbitration</div><div class="comp-desc">C-level engagement, expectation management & transparent communication</div></div>
+      <div class="glass-card comp-card" data-aos="fade-up" data-aos-delay="500"><div class="comp-icon"><i data-lucide="workflow" style="width:20px;height:20px;color:hsl(var(--primary))"></i></div><div class="comp-title">Agile & SAFe</div><div class="comp-desc">Scrum, SAFe 6 POPM, iterative delivery & sprint governance</div></div>
+      <div class="glass-card comp-card" data-aos="fade-up" data-aos-delay="550"><div class="comp-icon"><i data-lucide="message-square" style="width:20px;height:20px;color:hsl(var(--primary))"></i></div><div class="comp-title">Conversational AI</div><div class="comp-desc">Speech analytics, NLP & sentiment analysis solutions</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!--                   CERTIFICATIONS SECTION                         -->
+<!-- ================================================================ -->
+<section id="certifications" class="section-padding bg-sec30">
+  <div class="max-w-7xl">
+    <div class="section-header" data-aos="fade-up">
+      <h2><span class="text-gradient-gold">Credentials &</span> <span class="text-gradient-blue">Certifications</span></h2>
+      <p>Continuously advancing through industry-recognized professional development</p>
+    </div>
+
+    <div class="cert-grid">
+      <!-- PASTE YOUR CERTIFICATION BADGE URLs (src="...") and VERIFICATION LINKS (href="...") -->
+      <a href="https://www.credly.com/badges/8ff28b2a-e0ab-4e38-9c23-f4e96fdc00f5/public_url" target="_blank" rel="noopener noreferrer" class="glass-card cert-card" data-aos="zoom-in" data-aos-delay="0">
+        <div class="cert-badge"><img src="YOUR_PMP_BADGE_URL" alt="PMP" /></div>
+        <div class="cert-name">PMP®</div><div class="cert-issuer">PMI</div><div class="cert-desc">Project Management Professional</div>
+      </a>
+      <a href="https://badges.iiba.org/c1054397-635d-4315-a742-a7fa296a463f#acc.4u8EaRNP" target="_blank" rel="noopener noreferrer" class="glass-card cert-card" data-aos="zoom-in" data-aos-delay="80">
+        <div class="cert-badge"><img src="YOUR_CBAP_BADGE_URL" alt="CBAP" /></div>
+        <div class="cert-name">CBAP®</div><div class="cert-issuer">IIBA</div><div class="cert-desc">Certified Business Analysis Professional</div>
+      </a>
+      <a href="https://www.credly.com/badges/7f336eb4-5d07-4602-899b-beb33057e5b1/public_url" target="_blank" rel="noopener noreferrer" class="glass-card cert-card" data-aos="zoom-in" data-aos-delay="160">
+        <div class="cert-badge"><img src="YOUR_PSPO2_BADGE_URL" alt="PSPO II" /></div>
+        <div class="cert-name">PSPO II</div><div class="cert-issuer">Scrum.org</div><div class="cert-desc">Professional Scrum Product Owner II</div>
+      </a>
+      <a href="https://www.credly.com/badges/c1c55d04-c7ce-47ef-aaee-538e8bdb8090/public_url" target="_blank" rel="noopener noreferrer" class="glass-card cert-card" data-aos="zoom-in" data-aos-delay="240">
+        <div class="cert-badge"><img src="YOUR_PMIACP_BADGE_URL" alt="PMI-ACP" /></div>
+        <div class="cert-name">PMI-ACP®</div><div class="cert-issuer">PMI</div><div class="cert-desc">Agile Certified Practitioner</div>
+      </a>
+      <a href="https://www.credly.com/badges/03ca94c5-4ef5-4015-b0e0-14b6b43b70d2/public_url" target="_blank" rel="noopener noreferrer" class="glass-card cert-card" data-aos="zoom-in" data-aos-delay="320">
+        <div class="cert-badge"><img src="YOUR_SAFE_POPM_BADGE_URL" alt="SAFe POPM" /></div>
+        <div class="cert-name">SAFe® POPM</div><div class="cert-issuer">SAFe 6</div><div class="cert-desc">Product Owner / Product Manager</div>
+      </a>
+      <a href="https://www.linkedin.com/learning/certificates/748dd3afb570ce49f6a19bb27d25182afea4b347f0221c9207ca846716cc95ea" target="_blank" rel="noopener noreferrer" class="glass-card cert-card" data-aos="zoom-in" data-aos-delay="400">
+        <div class="cert-badge"><img src="YOUR_GREENBELT_BADGE_URL" alt="LSS Green Belt" /></div>
+        <div class="cert-name">LSS Green Belt</div><div class="cert-issuer">Verizon</div><div class="cert-desc">Lean Six Sigma Green Belt</div>
+      </a>
+    </div>
+
+    <!-- Additional Skills -->
+    <div class="cert-grid">
+      <a href="https://www.credly.com/badges/03ca94c5-4ef5-4015-b0e0-14b6b43b70d2/public_url" target="_blank" rel="noopener noreferrer" class="glass-card cert-card" data-aos="zoom-in" data-aos-delay="480">
+        <div class="cert-badge"><img src="YOUR_SMARTSHEET_BADGE_URL" alt="Smartsheet" /></div>
+        <div class="cert-name">Smartsheet</div><div class="cert-issuer">Smartsheet</div><div class="cert-desc">Core Product Certified</div>
+      </a>
+      <a href="https://www.udemy.com/certificate/UC-FK3TKVXM/" target="_blank" rel="noopener noreferrer" class="glass-card cert-card" data-aos="zoom-in" data-aos-delay="560">
+        <div class="cert-badge"><img src="YOUR_TABLEAU_BADGE_URL" alt="Tableau" /></div>
+        <div class="cert-name">Tableau Advanced</div><div class="cert-issuer">Tableau</div><div class="cert-desc">Advanced Analytics</div>
+      </a>
+      <a href="https://learn.quantummetric.com/certificate/lNkMjdrSzQ" target="_blank" rel="noopener noreferrer" class="glass-card cert-card" data-aos="zoom-in" data-aos-delay="640">
+        <div class="cert-badge"><img src="YOUR_QUANTUM_BADGE_URL" alt="Quantum Metric" /></div>
+        <div class="cert-name">Quantum Metric</div><div class="cert-issuer">Quantum Metric</div><div class="cert-desc">Business Analysis Certified</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!--                      JOURNEY SECTION                             -->
+<!-- ================================================================ -->
+<section id="journey" class="section-padding">
+  <div class="max-w-5xl">
+    <div class="section-header" data-aos="fade-up">
+      <h2><span class="text-gradient-gold">Professional</span> <span class="text-gradient-blue">Journey</span></h2>
+      <p>A decade of impact across global enterprises</p>
+      <div class="legend">
+        <div class="legend-item"><i data-lucide="building-2" style="width:14px;height:14px;color:hsl(var(--primary))"></i><span class="text-primary">Work Experience</span></div>
+        <div class="legend-item"><i data-lucide="graduation-cap" style="width:14px;height:14px;color:hsl(var(--accent))"></i><span class="text-accent">Education</span></div>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-line"></div>
+
+      <!-- 1. Verizon -->
+      <div class="timeline-item" data-aos="fade-right" data-aos-delay="0">
+        <div class="timeline-dot dot-work"></div>
+        <div class="timeline-card work">
+          <div class="tl-header">
+            <!-- PASTE YOUR VERIZON LOGO URL -->
+            <div class="tl-logo" style="background:hsl(var(--background))"><img src="YOUR_VERIZON_LOGO_URL" alt="Verizon" /></div>
+            <div>
+              <div class="tl-period"><i data-lucide="building-2" style="width:14px;height:14px;color:hsl(var(--primary));vertical-align:middle"></i> Feb 2022 – Present</div>
+              <div class="tl-company text-fg">Verizon</div>
+            </div>
+          </div>
+          <div class="tl-role work-role">Consultant – Project & Product Management</div>
+          <div class="tl-location">Chennai, India</div>
+          <ul class="tl-highlights">
+            <li><span class="tl-bullet bullet-work"></span>$380M+ cumulative revenue impact through AI-enabled digital personalization</li>
+            <li><span class="tl-bullet bullet-work"></span>AI/ML bundled product recommendation engine: +8-10% home internet sales</li>
+            <li><span class="tl-bullet bullet-work"></span>Checkout flow redesign: 9 pages → 4 steps, -10% cart abandonment</li>
+            <li><span class="tl-bullet bullet-work"></span>Six Sigma PMO governance: -25% project tracking effort via Smartsheet</li>
+            <li><span class="tl-bullet bullet-work"></span>12 internal awards: 8 Spotlight + 4 Simple Thanks</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 2. Uniphore -->
+      <div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
+        <div class="timeline-dot dot-work"></div>
+        <div class="timeline-card work">
+          <div class="tl-header">
+            <!-- PASTE YOUR UNIPHORE LOGO URL -->
+            <div class="tl-logo" style="background:transparent"><img src="YOUR_UNIPHORE_LOGO_URL" alt="Uniphore" /></div>
+            <div>
+              <div class="tl-period"><i data-lucide="building-2" style="width:14px;height:14px;color:hsl(var(--primary));vertical-align:middle"></i> Sep 2018 – Feb 2022</div>
+              <div class="tl-company text-fg">Uniphore Software Systems</div>
+            </div>
+          </div>
+          <div class="tl-role work-role">Senior Business Analyst & Project Manager</div>
+          <div class="tl-location">Chennai, India</div>
+          <ul class="tl-highlights">
+            <li><span class="tl-bullet bullet-work"></span>70-80% reduction in After-Call Work via LLM-driven automation</li>
+            <li><span class="tl-bullet bullet-work"></span>Managed 20+ resources with 100% SLA adherence across parallel workstreams</li>
+            <li><span class="tl-bullet bullet-work"></span>8-10% lift in insurance policy renewals via predictive analytics</li>
+            <li><span class="tl-bullet bullet-work"></span>Deployed automated QA across 4 global regions</li>
+            <li><span class="tl-bullet bullet-work"></span>3× Award of Excellence for innovation & cross-functional leadership</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 3. Great Lakes (Education) -->
+      <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
+        <div class="timeline-dot dot-edu"></div>
+        <div class="timeline-card edu">
+          <div class="tl-header">
+            <!-- PASTE YOUR GREAT LAKES LOGO URL -->
+            <div class="tl-logo" style="background:white"><img src="YOUR_GREATLAKES_LOGO_URL" alt="Great Lakes" /></div>
+            <div>
+              <div class="tl-period"><i data-lucide="graduation-cap" style="width:14px;height:14px;color:hsl(var(--accent));vertical-align:middle"></i> 2017 – 2018</div>
+              <div class="tl-company text-fg">Great Lakes Institute of Management</div>
+            </div>
+          </div>
+          <div class="tl-role edu-role">PGP – Business Analytics & Business Intelligence</div>
+          <div class="tl-location">Chennai, India (in collaboration with Stuart School of Business, IIT Chicago)</div>
+          <ul class="tl-highlights">
+            <li><span class="tl-bullet bullet-edu"></span>12-month hybrid program focused on end-to-end data-driven decision-making</li>
+            <li><span class="tl-bullet bullet-edu"></span>Advanced competencies in Statistical Methods, Predictive Modeling & Machine Learning</li>
+            <li><span class="tl-bullet bullet-edu"></span>Technical proficiency in Data Visualization (Tableau) & Optimization Techniques</li>
+            <li><span class="tl-bullet bullet-edu"></span>Extracted actionable insights from large datasets for strategic planning</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 4. BNP Paribas -->
+      <div class="timeline-item" data-aos="fade-left" data-aos-delay="300">
+        <div class="timeline-dot dot-work"></div>
+        <div class="timeline-card work">
+          <div class="tl-header">
+            <!-- PASTE YOUR BNP PARIBAS LOGO URL -->
+            <div class="tl-logo" style="background:transparent"><img src="YOUR_BNP_LOGO_URL" alt="BNP Paribas" /></div>
+            <div>
+              <div class="tl-period"><i data-lucide="building-2" style="width:14px;height:14px;color:hsl(var(--primary));vertical-align:middle"></i> Dec 2014 – Sep 2018</div>
+              <div class="tl-company text-fg">BNP Paribas</div>
+            </div>
+          </div>
+          <div class="tl-role work-role">Associate → Senior Associate</div>
+          <div class="tl-location">Chennai, India</div>
+          <ul class="tl-highlights">
+            <li><span class="tl-bullet bullet-work"></span>Derivatives Middle Office automation: +50% efficiency</li>
+            <li><span class="tl-bullet bullet-work"></span>Championed automation elevating data accuracy to 100%</li>
+            <li><span class="tl-bullet bullet-work"></span>Golden Star, Rising Star & 8 Kaizen Awards</li>
+            <li><span class="tl-bullet bullet-work"></span>3 promotions in 4 years</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 5. ITM (Education) -->
+      <div class="timeline-item" data-aos="fade-right" data-aos-delay="400">
+        <div class="timeline-dot dot-edu"></div>
+        <div class="timeline-card edu">
+          <div class="tl-header">
+            <!-- PASTE YOUR ITM LOGO URL -->
+            <div class="tl-logo" style="background:white;border-radius:50%"><img src="YOUR_ITM_LOGO_URL" alt="ITM" /></div>
+            <div>
+              <div class="tl-period"><i data-lucide="graduation-cap" style="width:14px;height:14px;color:hsl(var(--accent));vertical-align:middle"></i> 2013 – 2015</div>
+              <div class="tl-company text-fg">ITM – Institute for Technology & Management</div>
+            </div>
+          </div>
+          <div class="tl-role edu-role">PGDM – Finance</div>
+          <div class="tl-location">Chennai, India</div>
+          <ul class="tl-highlights">
+            <li><span class="tl-bullet bullet-edu"></span>Foundation in Financial Management, Corporate Strategy & Data-Driven Decision Making</li>
+            <li><span class="tl-bullet bullet-edu"></span>Core modules: Corporate Finance, Investment Banking, Security Analysis & Portfolio Management</li>
+            <li><span class="tl-bullet bullet-edu"></span>Technical proficiency in Advanced Excel & VBA for financial modeling</li>
+            <li><span class="tl-bullet bullet-edu"></span>Decision Sciences for business intelligence & risk assessment</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!--                     KEY PROJECTS SECTION                         -->
+<!-- ================================================================ -->
+<section id="key-projects" class="section-padding">
+  <div class="max-w-6xl">
+    <div class="section-header" data-aos="fade-up">
+      <h2><span class="text-gradient-gold">Key</span> <span class="text-gradient-blue">Projects</span></h2>
+      <p>Flagship initiatives driving measurable business outcomes through AI, analytics, and digital transformation</p>
+    </div>
+
+    <!-- Verizon Projects -->
+    <div class="project-block">
+      <div class="project-block-header" data-aos="fade-right">
+        <div class="tl-logo" style="background:hsl(var(--background))"><img src="YOUR_VERIZON_LOGO_URL" alt="Verizon" /></div>
+        <div><div style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700">Verizon</div><div style="font-size:0.75rem;color:hsl(var(--muted-foreground))">Key Projects</div></div>
+        <div class="project-block-line" style="background:linear-gradient(to right, hsl(var(--primary)/0.4), transparent)"></div>
+      </div>
+      <div class="project-grid">
+        <div class="project-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="project-header"><div class="project-icon"><i data-lucide="rocket" style="width:18px;height:18px"></i></div><div class="project-title">Omnichannel Program Management & AI Governance (NBX)</div></div>
+          <p class="project-summary">Led end-to-end program management for the NBX initiative — an AI and predictive modeling platform designed to anticipate customers' next probable actions. Applied Lean Six Sigma methodologies to overhaul program governance.</p>
+          <div class="project-wins"><span class="win-badge">−25% tracking effort</span><span class="win-badge">12+ workstreams standardized</span><span class="win-badge">Automated workflow triggers</span></div>
+          <div class="project-tools"><span class="tool-tag">Smartsheet</span><span class="tool-tag">Jira</span><span class="tool-tag">Confluence</span><span class="tool-tag">Lean Six Sigma</span><span class="tool-tag">Pega</span></div>
+        </div>
+        <div class="project-card" data-aos="fade-up" data-aos-delay="80">
+          <div class="project-header"><div class="project-icon"><i data-lucide="bot" style="width:18px;height:18px"></i></div><div class="project-title">Hyper-Personalized AI Chatbot</div></div>
+          <p class="project-summary">Led the integration of an external hyper-personalization AI platform into Verizon's digital ecosystem, driving measurable improvements across the digital sales funnel.</p>
+          <div class="project-wins"><span class="win-badge">↑ Digital conversions</span><span class="win-badge">↓ Drop-offs</span><span class="win-badge">↑ NPS & CSAT</span></div>
+          <div class="project-tools"><span class="tool-tag">AI/ML</span><span class="tool-tag">Personalization Engine</span><span class="tool-tag">Adobe Analytics</span><span class="tool-tag">A/B Testing</span></div>
+        </div>
+        <div class="project-card" data-aos="fade-up" data-aos-delay="160">
+          <div class="project-header"><div class="project-icon"><i data-lucide="file-text" style="width:18px;height:18px"></i></div><div class="project-title">AI-Led Digital Content Creation & Governance</div></div>
+          <p class="project-summary">Introduced an AI-powered in-house content generation framework that produces digital assets in pre-approved formats, streamlining the pathway from ideation to deployment.</p>
+          <div class="project-wins"><span class="win-badge">~50% faster publishing</span><span class="win-badge">Eliminated manual coding</span><span class="win-badge">Automated deployment queuing</span></div>
+          <div class="project-tools"><span class="tool-tag">Generative AI</span><span class="tool-tag">Adobe Analytics</span><span class="tool-tag">Process Automation</span></div>
+        </div>
+        <div class="project-card" data-aos="fade-up" data-aos-delay="240">
+          <div class="project-header"><div class="project-icon"><i data-lucide="brain" style="width:18px;height:18px"></i></div><div class="project-title">AI-Based Customer Journey Summarization</div></div>
+          <p class="project-summary">Led deployment of an AI-based solution that aggregates interactions across all channels and generates a consolidated journey summary surfaced in real time.</p>
+          <div class="project-wins"><span class="win-badge">−10% resolution time</span><span class="win-badge">−3–5% negative NPS</span><span class="win-badge">Eliminated info silos</span></div>
+          <div class="project-tools"><span class="tool-tag">ConvoIQ</span><span class="tool-tag">Quantum Metric</span><span class="tool-tag">Tableau</span><span class="tool-tag">Smartsheet</span></div>
+        </div>
+        <div class="project-card" data-aos="fade-up" data-aos-delay="320">
+          <div class="project-header"><div class="project-icon"><i data-lucide="shopping-cart" style="width:18px;height:18px"></i></div><div class="project-title">Digital Experience Optimization – Checkout Flow</div></div>
+          <p class="project-summary">Redesigned the end-to-end cart purchase journey, compressing the checkout flow from 9 pages to 4 streamlined steps.</p>
+          <div class="project-wins"><span class="win-badge">−10% cart abandonment</span><span class="win-badge">+40% checkout speed</span><span class="win-badge">9 → 4 steps</span></div>
+          <div class="project-tools"><span class="tool-tag">Evolv AI</span><span class="tool-tag">Adobe Analytics</span><span class="tool-tag">Quantum Metric</span><span class="tool-tag">Tableau</span></div>
+        </div>
+        <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="project-header"><div class="project-icon"><i data-lucide="package" style="width:18px;height:18px"></i></div><div class="project-title">Bundled Products Market Research & Optimization</div></div>
+          <p class="project-summary">Identified an opportunity to shift toward curated product bundles — offering a cohesive set of complementary products as a single purchase unit using AI models.</p>
+          <div class="project-wins"><span class="win-badge">↑ Average order value</span><span class="win-badge">↑ Targeting precision</span><span class="win-badge">AI-assisted analysis</span></div>
+          <div class="project-tools"><span class="tool-tag">Market Analysis</span><span class="tool-tag">Evolv AI</span><span class="tool-tag">A/B Testing</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Uniphore Projects -->
+    <div class="project-block">
+      <div class="project-block-header" data-aos="fade-right">
+        <div class="tl-logo" style="background:transparent"><img src="YOUR_UNIPHORE_LOGO_URL" alt="Uniphore" /></div>
+        <div><div style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700">Uniphore Software Systems</div><div style="font-size:0.75rem;color:hsl(var(--muted-foreground))">Key Projects</div></div>
+        <div class="project-block-line" style="background:linear-gradient(to right, hsl(var(--accent)/0.4), transparent)"></div>
+      </div>
+      <div class="project-grid">
+        <div class="project-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="project-header"><div class="project-icon"><i data-lucide="shield" style="width:18px;height:18px"></i></div><div class="project-title">Conversational Analytics for Public Policy (COVID-19)</div></div>
+          <p class="project-summary">Led end-to-end conversational analytics initiative to evaluate public sentiment and behavioral trends during the COVID-19 crisis.</p>
+          <div class="project-wins"><span class="win-badge">Informed pandemic policy</span><span class="win-badge">Redesigned relief measures</span><span class="win-badge">Protected communities</span></div>
+          <div class="project-tools"><span class="tool-tag">Speech Analytics</span><span class="tool-tag">NLP</span><span class="tool-tag">Sentiment Analysis</span></div>
+        </div>
+        <div class="project-card" data-aos="fade-up" data-aos-delay="80">
+          <div class="project-header"><div class="project-icon"><i data-lucide="headphones" style="width:18px;height:18px"></i></div><div class="project-title">Real-Time After-Call Work (ACW) Automation</div></div>
+          <p class="project-summary">Spearheaded deployment of a real-time ACW automation solution leveraging Large Language Models and advanced Conversational Analytics.</p>
+          <div class="project-wins"><span class="win-badge">−70–80% ACW time</span><span class="win-badge">+25% agent productivity</span><span class="win-badge">Eliminated manual ticketing</span></div>
+          <div class="project-tools"><span class="tool-tag">LLMs</span><span class="tool-tag">Conversational AI</span><span class="tool-tag">NLP</span><span class="tool-tag">CRM Integration</span></div>
+        </div>
+        <div class="project-card" data-aos="fade-up" data-aos-delay="160">
+          <div class="project-header"><div class="project-icon"><i data-lucide="globe" style="width:18px;height:18px"></i></div><div class="project-title">Automated Speech-Based Agent Performance Evaluation</div></div>
+          <p class="project-summary">Led deployment of automated, speech-driven agent performance evaluation systems across contact centers spanning India, the U.S., Europe, and Asia-Pacific.</p>
+          <div class="project-wins"><span class="win-badge">4 global regions deployed</span><span class="win-badge">↑ CSAT & NPS</span><span class="win-badge">Scalable automated QA</span></div>
+          <div class="project-tools"><span class="tool-tag">Speech Analytics</span><span class="tool-tag">Automated QA</span><span class="tool-tag">NLP</span></div>
+        </div>
+        <div class="project-card" data-aos="fade-up" data-aos-delay="240">
+          <div class="project-header"><div class="project-icon"><i data-lucide="trending-up" style="width:18px;height:18px"></i></div><div class="project-title">Renewal Probability Prediction – Leading Indian Insurer</div></div>
+          <p class="project-summary">Spearheaded a predictive analytics initiative leveraging large-scale conversational data to forecast customer renewal probability.</p>
+          <div class="project-wins"><span class="win-badge">+8–10% renewal lift</span><span class="win-badge">Proactive retention</span><span class="win-badge">Beat industry benchmarks</span></div>
+          <div class="project-tools"><span class="tool-tag">Predictive Analytics</span><span class="tool-tag">ML</span><span class="tool-tag">Customer Segmentation</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!--                    TOOLS & TECHNOLOGIES                          -->
+<!-- ================================================================ -->
+<section class="section-padding">
+  <div class="max-w-7xl">
+    <div class="section-header" data-aos="fade-up">
+      <h2><span class="text-gradient-gold">Tools &</span> <span class="text-gradient-blue">Technologies</span></h2>
+      <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.125rem">Where creativity meets strategy...</p>
+    </div>
+
+    <!-- PASTE YOUR TOOL LOGO URLs in each <img> tag below -->
+    <div class="tools-category" data-aos="fade-up" data-aos-delay="0">
+      <h3>Analytics, AI & Visualization</h3>
+      <div class="tools-grid">
+        <div class="glass-card tool-card"><div class="tool-logo"><img src="YOUR_ADOBE_ANALYTICS_LOGO" alt="Adobe Analytics" /></div><span class="tool-name">Adobe Analytics</span></div>
+        <div class="glass-card tool-card"><div class="tool-logo"><img src="YOUR_TABLEAU_LOGO" alt="Tableau" /></div><span class="tool-name">Tableau</span></div>
+        <div class="glass-card tool-card"><div class="tool-logo"><img src="YOUR_QUANTUM_LOGO" alt="Quantum Metric" /></div><span class="tool-name">Quantum Metric</span></div>
+        <div class="glass-card tool-card"><div class="tool-logo"><img src="YOUR_EVOLV_LOGO" alt="Evolv AI" /></div><span class="tool-name">Evolv AI</span></div>
+        <div class="glass-card tool-card"><div class="tool-logo"><img src="YOUR_CONVOIQ_LOGO" alt="ConvoIQ" /></div><span class="tool-name">ConvoIQ</span></div>
+        <div class="glass-card tool-card"><div class="tool-logo"><img src="YOUR_PEGA_LOGO" alt="Pega" /></div><span class="tool-name">Pega</span></div>
+        <div class="glass-card tool-card"><div class="tool-logo"><img src="YOUR_EXCEL_LOGO" alt="Excel" /></div><span class="tool-name">Advanced Excel</span></div>
+      </div>
+    </div>
+    <div class="tools-category" data-aos="fade-up" data-aos-delay="100">
+      <h3>Collaboration</h3>
+      <div class="tools-grid">
+        <div class="glass-card tool-card"><div class="tool-logo"><img src="YOUR_SMARTSHEET_LOGO" alt="Smartsheet" /></div><span class="tool-name">Smartsheet</span></div>
+        <div class="glass-card tool-card"><div class="tool-logo"><img src="YOUR_JIRA_LOGO" alt="Jira" /></div><span class="tool-name">Jira</span></div>
+        <div class="glass-card tool-card"><div class="tool-logo"><img src="YOUR_CONFLUENCE_LOGO" alt="Confluence" /></div><span class="tool-name">Confluence</span></div>
+      </div>
+    </div>
+    <div class="tools-category" data-aos="fade-up" data-aos-delay="200">
+      <h3>Programming</h3>
+      <div class="tools-grid">
+        <div class="glass-card tool-card"><div class="tool-logo"><img src="YOUR_PYTHON_LOGO" alt="Python" /></div><span class="tool-name">Python</span></div>
+        <div class="glass-card tool-card"><div class="tool-logo"><img src="YOUR_SQL_LOGO" alt="SQL" /></div><span class="tool-name">SQL</span></div>
+        <div class="glass-card tool-card"><div class="tool-logo"><img src="YOUR_R_LOGO" alt="R" /></div><span class="tool-name">R Programming</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!--                      AWARDS SECTION                              -->
+<!-- ================================================================ -->
+<section id="awards" class="section-padding bg-sec30">
+  <div class="max-w-7xl">
+    <div class="section-header" data-aos="fade-up">
+      <h2><span class="text-gradient-gold">Awards &</span> <span class="text-gradient-blue">Honours</span></h2>
+      <p>Recognized across organizations for leadership, innovation, and delivering excellence</p>
+    </div>
+
+    <div class="awards-grid">
+      <!-- Verizon Awards -->
+      <div class="glass-card award-card" style="border-color:hsl(var(--destructive)/0.3)" data-aos="fade-up" data-aos-delay="0">
+        <!-- PASTE YOUR VERIZON AWARD LOGO URL -->
+        <div class="award-logo-box" style="background:white"><img src="YOUR_VERIZON_WORDMARK_URL" alt="Verizon" /></div>
+        <div class="award-icon" style="background:linear-gradient(135deg,hsl(var(--destructive)),hsl(var(--accent)))"><i data-lucide="star" style="width:20px;height:20px;color:white"></i></div>
+        <div style="flex:1">
+          <div style="margin-bottom:1rem"><div class="accolade-label">8 Spotlight Awards</div><div class="accolade-desc">Customer Excellence recognitions from CX Leadership & Senior Management</div></div>
+          <div><div class="accolade-label">4 Simple Thanks</div><div class="accolade-desc">Peer-nominated awards for collaboration and going above & beyond</div></div>
+        </div>
+      </div>
+
+      <!-- Uniphore Awards -->
+      <div class="glass-card award-card" style="border-color:hsl(var(--teal)/0.3)" data-aos="fade-up" data-aos-delay="150">
+        <!-- PASTE YOUR UNIPHORE AWARD LOGO URL -->
+        <div class="award-logo-box" style="background:hsl(220 15% 18%)"><img src="YOUR_UNIPHORE_WHITE_LOGO_URL" alt="Uniphore" /></div>
+        <div class="award-icon" style="background:linear-gradient(135deg,hsl(var(--teal)),hsl(var(--primary)))"><i data-lucide="trophy" style="width:20px;height:20px;color:white"></i></div>
+        <div style="flex:1">
+          <div><div class="accolade-label">Award of Excellence ×3</div><div class="accolade-desc">Exceptional contributions in product innovation and collaborative cross-functional leadership</div></div>
+        </div>
+      </div>
+
+      <!-- BNP Paribas Awards -->
+      <div class="glass-card award-card" style="border-color:hsl(var(--accent)/0.3)" data-aos="fade-up" data-aos-delay="300">
+        <!-- PASTE YOUR BNP PARIBAS LOGO URL -->
+        <div class="award-logo-box" style="background:white"><img src="YOUR_BNP_PARIBAS_LOGO_URL" alt="BNP Paribas" style="max-height:80px;max-width:240px" /></div>
+        <div class="award-icon" style="background:linear-gradient(135deg,hsl(var(--accent)),hsl(var(--gold-dim)))"><i data-lucide="award" style="width:20px;height:20px;color:white"></i></div>
+        <div style="flex:1">
+          <div style="margin-bottom:1rem"><div class="accolade-label">Golden Star · Rising Star</div><div class="accolade-desc">Prestigious recognition for outstanding individual performance</div></div>
+          <div style="margin-bottom:1rem"><div class="accolade-label">Kaizen Awards ×8</div><div class="accolade-desc">Process innovation and automation excellence across multiple initiatives</div></div>
+          <div><div class="accolade-label">Multiple Awards of Excellence</div><div class="accolade-desc">Innovation, automation, and exemplary team performance</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Awards collage image -->
+    <div class="awards-collage" data-aos="zoom-in" data-aos-delay="300">
+      <div class="glow-overlay"></div>
+      <!-- PASTE YOUR AWARDS COLLAGE IMAGE URL -->
+      <img src="YOUR_AWARDS_COLLAGE_IMAGE_URL" alt="Awards Collage" style="position:relative" />
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!--                      BEYOND SECTION                              -->
+<!-- ================================================================ -->
+<section id="beyond" class="section-padding">
+  <div class="max-w-7xl">
+    <div class="section-header" data-aos="fade-up">
+      <h2><span class="text-gradient-gold">Beyond the</span> <span class="text-gradient-blue">Boardroom</span></h2>
+      <p>Life beyond the professional arena — passions that fuel creativity and perspective</p>
+    </div>
+
+    <div class="beyond-grid">
+      <!-- Drone Photography -->
+      <div class="glass-card beyond-card" data-aos="fade-right" data-aos-delay="100">
+        <div class="beyond-img">
+          <!-- PASTE YOUR DRONE PHOTO URL -->
+          <img src="YOUR_DRONE_PHOTO_URL" alt="Aerial drone photography" />
+          <div class="img-overlay"></div>
+          <div class="img-label">
+            <div class="img-label-icon"><i data-lucide="camera" style="width:18px;height:18px;color:hsl(var(--primary))"></i></div>
+            <span style="font-size:0.875rem;font-weight:600">Licensed Drone Pilot</span>
+          </div>
+        </div>
+        <div class="beyond-body">
+          <h3><i data-lucide="plane" style="width:20px;height:20px;color:hsl(var(--primary))"></i> Drone Photography</h3>
+          <p>As a licensed drone pilot and nature & wildlife explorer, I capture breathtaking aerial perspectives of landscapes. This passion for seeing the bigger picture directly translates into how I approach complex business challenges — always seeking the strategic, bird's-eye view.</p>
+        </div>
+      </div>
+
+      <!-- Civic Advocacy -->
+      <div class="glass-card beyond-card" data-aos="fade-left" data-aos-delay="200">
+        <div class="civic-visual">
+          <div style="text-align:center">
+            <i data-lucide="heart" style="width:64px;height:64px;color:hsl(var(--accent));opacity:0.6;margin:0 auto 1rem;display:block"></i>
+            <div class="quote">"Where creativity<br />meets empathy"</div>
+          </div>
+          <div class="img-overlay"></div>
+        </div>
+        <div class="beyond-body">
+          <h3><i data-lucide="heart" style="width:20px;height:20px;color:hsl(var(--accent))"></i> Civic Advocacy & Social Action</h3>
+          <p>Actively volunteering in civil rights and social action initiatives. Committed to driving meaningful change beyond the corporate world — applying the same rigor, empathy, and leadership skills to advocate for community welfare, social justice, and sustainable development.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!--                     CONTACT SECTION                              -->
+<!-- ================================================================ -->
+<section id="contact" class="section-padding bg-sec30">
+  <div class="max-w-4xl" style="text-align:center">
+    <div data-aos="fade-up">
+      <h2 style="font-size:clamp(1.75rem,4vw,2.5rem);font-weight:700;margin-bottom:1rem">
+        <span class="text-gradient-gold">Let's</span> <span class="text-gradient-blue">Connect</span>
+      </h2>
+      <p class="text-muted" style="max-width:36rem;margin:0 auto 2rem">
+        Open to exciting opportunities in Product, Program & Project Management leadership roles.
+      </p>
+    </div>
+
+    <!-- Cover banner -->
+    <div class="cover-banner" data-aos="zoom-in" data-aos-delay="100">
+      <div class="glow-overlay"></div>
+      <!-- PASTE YOUR COVER BANNER IMAGE URL -->
+      <img src="YOUR_COVER_BANNER_IMAGE_URL" alt="Aravind Chandramohan — Product & Project Leadership" style="position:relative" />
+    </div>
+
+    <!-- Contact cards -->
+    <div class="contact-grid" data-aos="fade-up" data-aos-delay="200">
+      <!-- PASTE YOUR EMAIL -->
+      <a href="mailto:mail.aravind.c@gmail.com" class="glass-card contact-card">
+        <div class="contact-card-icon"><i data-lucide="mail" style="width:24px;height:24px;color:hsl(var(--primary))"></i></div>
+        <div class="contact-card-label">Email</div>
+        <div class="contact-card-value">mail.aravind.c@gmail.com</div>
+      </a>
+      <!-- PASTE YOUR PHONE -->
+      <a href="tel:+917010967137" class="glass-card contact-card">
+        <div class="contact-card-icon"><i data-lucide="phone" style="width:24px;height:24px;color:hsl(var(--primary))"></i></div>
+        <div class="contact-card-label">Phone</div>
+        <div class="contact-card-value">+91-7010967137</div>
+      </a>
+      <!-- PASTE YOUR LINKEDIN URL -->
+      <a href="https://www.linkedin.com/in/aravindchandramohan/" target="_blank" rel="noopener noreferrer" class="glass-card contact-card">
+        <div class="contact-card-icon"><i data-lucide="linkedin" style="width:24px;height:24px;color:hsl(var(--primary))"></i></div>
+        <div class="contact-card-label">LinkedIn</div>
+        <div class="contact-card-value">aravindchandramohan</div>
+      </a>
+      <div class="glass-card contact-card">
+        <div class="contact-card-icon"><i data-lucide="map-pin" style="width:24px;height:24px;color:hsl(var(--accent))"></i></div>
+        <div class="contact-card-label">Location</div>
+        <div class="contact-card-value">Chennai, India</div>
+      </div>
+    </div>
+
+    <!-- Industry badges -->
+    <div data-aos="fade-up" data-aos-delay="300" style="margin-bottom:2rem">
+      <p class="section-subtext">Industry Experience</p>
+      <div class="industry-badges">
+        <span class="industry-badge">Telecom</span>
+        <span class="industry-badge">Banking & Financial Services</span>
+        <span class="industry-badge">Conversational AI</span>
+        <span class="industry-badge">Analytics</span>
+        <span class="industry-badge">Insurance</span>
+      </div>
+    </div>
+
+    <!-- Certification badges -->
+    <div class="cert-badges-bottom" data-aos="fade-up" data-aos-delay="400">
+      <span class="cert-badge-small">PMP®</span>
+      <span class="cert-badge-small">CBAP®</span>
+      <span class="cert-badge-small">PSPO II</span>
+      <span class="cert-badge-small">PMI-ACP®</span>
+      <span class="cert-badge-small">SAFe® 6 POPM</span>
+      <span class="cert-badge-small">LSS Green Belt</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!--                          FOOTER                                  -->
+<!-- ================================================================ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <p>© <span id="year"></span> <span class="text-fg" style="font-weight:600">Aravind Chandramohan</span>. All rights reserved.</p>
+    <p style="font-size:0.75rem">Product · Program · Project Leadership</p>
+  </div>
+</footer>
+
+<!-- Back to Top Button -->
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i data-lucide="arrow-up" style="width:20px;height:20px"></i>
+</button>
+
+<!-- ================================================================ -->
+<!--                         SCRIPTS                                  -->
+<!-- ================================================================ -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  // Initialize AOS
+  AOS.init({ duration: 600, once: true, offset: 80, easing: 'ease-out' });
+
+  // Initialize Lucide icons
+  lucide.createIcons();
+
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Navbar scroll effect
+  window.addEventListener('scroll', function() {
+    var navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) { navbar.classList.add('scrolled'); }
+    else { navbar.classList.remove('scrolled'); }
+
+    var btn = document.getElementById('backToTop');
+    if (window.scrollY > 400) { btn.classList.add('visible'); }
+    else { btn.classList.remove('visible'); }
+  });
+
+  // Animated counters
+  var observed = false;
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting && !observed) {
+        observed = true;
+        document.querySelectorAll('[data-target]').forEach(function(el) {
+          var target = parseInt(el.getAttribute('data-target'));
+          var count = 0;
+          var step = Math.ceil(target / 66);
+          var timer = setInterval(function() {
+            count += step;
+            if (count >= target) { el.textContent = target; clearInterval(timer); }
+            else { el.textContent = count; }
+          }, 30);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+  observer.observe(document.getElementById('impact'));
+</script>
+</body>
+</html>
