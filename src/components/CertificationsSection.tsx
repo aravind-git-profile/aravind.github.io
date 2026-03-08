@@ -79,12 +79,15 @@ const CertificationsSection = () => {
         {/* Additional skills */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
           {additionalSkills.map((skill, i) => (
-            <motion.div
+            <motion.a
               key={skill.name}
+              href={skill.url}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.4, delay: 0.6 + i * 0.1 }}
-              className="glass-card rounded-xl p-6 hover:glow-blue transition-all duration-300 group flex flex-col items-center text-center"
+              className="glass-card rounded-xl p-6 hover:glow-blue transition-all duration-300 group flex flex-col items-center text-center cursor-pointer"
             >
               <div className="w-20 h-20 rounded-full overflow-hidden mb-4 group-hover:scale-110 transition-transform flex items-center justify-center">
                 <img
@@ -96,7 +99,7 @@ const CertificationsSection = () => {
               <h3 className="font-body font-bold text-foreground text-lg">{skill.name}</h3>
               <p className="text-sm text-primary font-body">{skill.issuer}</p>
               <p className="text-xs text-muted-foreground mt-1">{skill.desc}</p>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
 
