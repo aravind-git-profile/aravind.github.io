@@ -74,23 +74,28 @@ const CertificationsSection = () => {
         </div>
 
         {/* Additional skills */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.6 }}
-          className="flex flex-wrap justify-center gap-4 mb-12"
-        >
-          {additionalSkills.map((skill) => (
-            <div key={skill.name} className="flex items-center gap-3 px-4 py-2 rounded-full border border-border text-sm text-muted-foreground hover:border-primary/40 transition-colors">
-              <img
-                src={skill.badge}
-                alt={skill.name}
-                className={`w-6 h-6 object-contain rounded-sm ${skill.removeBg ? 'mix-blend-multiply dark:mix-blend-screen dark:invert' : ''}`}
-              />
-              {skill.name}
-            </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
+          {additionalSkills.map((skill, i) => (
+            <motion.div
+              key={skill.name}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={inView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.4, delay: 0.6 + i * 0.1 }}
+              className="glass-card rounded-xl p-6 hover:glow-blue transition-all duration-300 group flex flex-col items-center text-center"
+            >
+              <div className="w-20 h-20 rounded-full overflow-hidden mb-4 group-hover:scale-110 transition-transform flex items-center justify-center">
+                <img
+                  src={skill.badge}
+                  alt={skill.name}
+                  className={`w-full h-full object-contain ${skill.removeBg ? 'mix-blend-multiply dark:mix-blend-screen dark:invert' : ''}`}
+                />
+              </div>
+              <h3 className="font-body font-bold text-foreground text-lg">{skill.name}</h3>
+              <p className="text-sm text-primary font-body">{skill.issuer}</p>
+              <p className="text-xs text-muted-foreground mt-1">{skill.desc}</p>
+            </motion.div>
           ))}
-        </motion.div>
+        </div>
 
         {/* Collage image */}
         <motion.div
