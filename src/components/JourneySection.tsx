@@ -26,21 +26,6 @@ const timelineItems = [
     ],
   },
   {
-    type: "education" as const,
-    company: "Great Lakes Institute of Management",
-    role: "PGP – Business Analytics & Business Intelligence",
-    period: "2017 – 2018",
-    location: "Chennai, India (in collaboration with Stuart School of Business, IIT Chicago)",
-    logo: greatlakesLogo,
-    logoBg: "bg-white",
-    highlights: [
-      "12-month hybrid program focused on end-to-end data-driven decision-making",
-      "Advanced competencies in Statistical Methods, Predictive Modeling & Machine Learning",
-      "Technical proficiency in Data Visualization (Tableau) & Optimization Techniques",
-      "Extracted actionable insights from large datasets for strategic planning",
-    ],
-  },
-  {
     type: "work" as const,
     company: "Uniphore Software Systems",
     role: "Senior Business Analyst & Project Manager",
@@ -54,6 +39,21 @@ const timelineItems = [
       "8-10% lift in insurance policy renewals via predictive analytics",
       "Deployed automated QA across 4 global regions",
       "3× Award of Excellence for innovation & cross-functional leadership",
+    ],
+  },
+  {
+    type: "education" as const,
+    company: "Great Lakes Institute of Management",
+    role: "PGP – Business Analytics & Business Intelligence",
+    period: "2017 – 2018",
+    location: "Chennai, India (in collaboration with Stuart School of Business, IIT Chicago)",
+    logo: greatlakesLogo,
+    logoBg: "bg-white",
+    highlights: [
+      "12-month hybrid program focused on end-to-end data-driven decision-making",
+      "Advanced competencies in Statistical Methods, Predictive Modeling & Machine Learning",
+      "Technical proficiency in Data Visualization (Tableau) & Optimization Techniques",
+      "Extracted actionable insights from large datasets for strategic planning",
     ],
   },
   {
