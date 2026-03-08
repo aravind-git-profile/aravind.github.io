@@ -82,7 +82,7 @@ const AwardsSection = () => {
                   <img
                     src={award.logo}
                     alt={award.company}
-                    className="max-h-14 max-w-[180px] object-contain"
+                    className={`${award.logoClass} object-contain`}
                   />
                 </div>
 
