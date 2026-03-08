@@ -55,7 +55,7 @@ const ImpactSection = () => {
             The <span className="text-gradient-gold">Impact</span> Numbers
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Delivering measurable results across Fortune 500 enterprises
+            Driving measurable outcomes from agile startups to Fortune 500 enterprises — spanning IT, Banking, Analytics & Telecommunications
           </p>
         </motion.div>
 
