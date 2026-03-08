@@ -88,6 +88,113 @@ const timelineItems = [
   },
 ];
 
+type TimelineItem = typeof timelineItems[number];
+
+const TimelineCard = ({ exp, index }: { exp: TimelineItem; index: number }) => {
+  const cardRef = useRef(null);
+  const cardInView = useInView(cardRef, { once: true, margin: "-60px" });
+
+  const isWork = exp.type === "work";
+  const borderColor = isWork ? "border-primary/60" : "border-accent/60";
+  const dotColor = isWork ? "bg-primary" : "bg-accent";
+  const bulletColor = isWork ? "bg-primary/70" : "bg-accent/70";
+  const roleColor = isWork ? "text-primary" : "text-accent";
+  const cardBg = isWork
+    ? "bg-primary/[0.03] hover:bg-primary/[0.06]"
+    : "bg-accent/[0.03] hover:bg-accent/[0.06]";
+  const hoverShadow = isWork
+    ? "hover:shadow-[0_0_24px_hsl(var(--primary)/0.12)]"
+    : "hover:shadow-[0_0_24px_hsl(var(--accent)/0.12)]";
+  const isLeft = index % 2 === 0;
+
+  return (
+    <motion.div
+      ref={cardRef}
+      initial={{ opacity: 0, x: isLeft ? -60 : 60, y: 30 }}
+      animate={cardInView ? { opacity: 1, x: 0, y: 0 } : {}}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className={`relative mb-12 md:mb-16 ${
+        isLeft ? "md:pr-[52%]" : "md:pl-[52%]"
+      } pl-16 md:pl-0`}
+    >
+      {/* Dot on timeline */}
+      <motion.div
+        initial={{ scale: 0 }}
+        animate={cardInView ? { scale: 1 } : {}}
+        transition={{ duration: 0.4, delay: 0.2, type: "spring", stiffness: 300 }}
+        className={`absolute left-4 md:left-1/2 top-2 w-5 h-5 rounded-full ${dotColor} border-4 border-background md:-translate-x-1/2 z-10`}
+      />
+
+      {/* Connector line */}
+      <motion.div
+        initial={{ scaleX: 0 }}
+        animate={cardInView ? { scaleX: 1 } : {}}
+        transition={{ duration: 0.3, delay: 0.3 }}
+        className={`hidden md:block absolute top-[18px] h-px bg-border origin-center ${
+          isLeft ? "right-[48%] w-[4%]" : "left-[48%] w-[4%]"
+        }`}
+      />
+
+      {/* Card */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={cardInView ? { opacity: 1, scale: 1 } : {}}
+        transition={{ duration: 0.5, delay: 0.15 }}
+        className={`rounded-xl p-6 border ${borderColor} ${cardBg} ${hoverShadow} transition-all duration-300 backdrop-blur-sm`}
+      >
+        <div className="flex items-center gap-3 mb-3">
+          <div
+            className={`w-10 h-10 rounded-lg ${exp.logoBg} flex items-center justify-center overflow-hidden shrink-0 p-1`}
+          >
+            <img
+              src={exp.logo}
+              alt={`${exp.company} logo`}
+              className="w-full h-full object-contain"
+            />
+          </div>
+          <div>
+            <div className="flex items-center gap-2">
+              {isWork ? (
+                <Building2 size={14} className="text-primary" />
+              ) : (
+                <GraduationCap size={14} className="text-accent" />
+              )}
+              <span className="text-xs font-mono text-muted-foreground">
+                {exp.period}
+              </span>
+            </div>
+            <h3 className="font-display text-lg font-bold text-foreground">
+              {exp.company}
+            </h3>
+          </div>
+        </div>
+        <p className={`text-sm ${roleColor} font-body font-medium mb-2`}>
+          {exp.role}
+        </p>
+        <p className="text-xs text-muted-foreground mb-3">
+          {exp.location}
+        </p>
+        <ul className="space-y-2">
+          {exp.highlights.map((h, j) => (
+            <motion.li
+              key={j}
+              initial={{ opacity: 0, x: isLeft ? -15 : 15 }}
+              animate={cardInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.3, delay: 0.3 + j * 0.08 }}
+              className="flex items-start gap-2 text-sm text-secondary-foreground"
+            >
+              <span
+                className={`w-1.5 h-1.5 rounded-full ${bulletColor} mt-1.5 shrink-0`}
+              />
+              {h}
+            </motion.li>
+          ))}
+        </ul>
+      </motion.div>
+    </motion.div>
+  );
+};
+
 const JourneySection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
@@ -128,71 +235,6 @@ const JourneySection = () => {
           {timelineItems.map((exp, i) => (
             <TimelineCard key={exp.company + exp.period} exp={exp} index={i} />
           ))}
-                {/* Dot on timeline */}
-                <div
-                  className={`absolute left-4 md:left-1/2 top-2 w-5 h-5 rounded-full ${dotColor} border-4 border-background md:-translate-x-1/2 z-10`}
-                />
-
-                {/* Connector line from dot to card */}
-                <div
-                  className={`hidden md:block absolute top-[18px] h-px bg-border ${
-                    isLeft ? "right-[48%] w-[4%]" : "left-[48%] w-[4%]"
-                  }`}
-                />
-
-                {/* Card */}
-                <div
-                  className={`rounded-xl p-6 border ${borderColor} ${cardBg} ${hoverShadow} transition-all duration-300 backdrop-blur-sm`}
-                >
-                  <div className="flex items-center gap-3 mb-3">
-                    <div
-                      className={`w-10 h-10 rounded-lg ${exp.logoBg} flex items-center justify-center overflow-hidden shrink-0 p-1`}
-                    >
-                      <img
-                        src={exp.logo}
-                        alt={`${exp.company} logo`}
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        {isWork ? (
-                          <Building2 size={14} className="text-primary" />
-                        ) : (
-                          <GraduationCap size={14} className="text-accent" />
-                        )}
-                        <span className="text-xs font-mono text-muted-foreground">
-                          {exp.period}
-                        </span>
-                      </div>
-                      <h3 className="font-display text-lg font-bold text-foreground">
-                        {exp.company}
-                      </h3>
-                    </div>
-                  </div>
-                  <p className={`text-sm ${roleColor} font-body font-medium mb-2`}>
-                    {exp.role}
-                  </p>
-                  <p className="text-xs text-muted-foreground mb-3">
-                    {exp.location}
-                  </p>
-                  <ul className="space-y-2">
-                    {exp.highlights.map((h, j) => (
-                      <li
-                        key={j}
-                        className="flex items-start gap-2 text-sm text-secondary-foreground"
-                      >
-                        <span
-                          className={`w-1.5 h-1.5 rounded-full ${bulletColor} mt-1.5 shrink-0`}
-                        />
-                        {h}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            );
-          })}
         </div>
       </div>
     </section>
