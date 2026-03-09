@@ -1,16 +1,19 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Home, BarChart3, Layers, Award, Route, FolderKanban, Wrench, Trophy, Heart, Mail } from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.png";
 
 const navItems = [
-  { label: "Home", href: "#hero" },
-  { label: "Impact", href: "#impact" },
-  { label: "Competencies", href: "#competencies" },
-  { label: "Journey", href: "#journey" },
-  { label: "Certifications", href: "#certifications" },
-  { label: "Beyond", href: "#beyond" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "#hero", icon: Home },
+  { label: "Impact", href: "#impact", icon: BarChart3 },
+  { label: "Competencies", href: "#competencies", icon: Layers },
+  { label: "Credentials", href: "#certifications", icon: Award },
+  { label: "Journey", href: "#journey", icon: Route },
+  { label: "Projects", href: "#key-projects", icon: FolderKanban },
+  { label: "Tools", href: "#tools", icon: Wrench },
+  { label: "Awards", href: "#awards", icon: Trophy },
+  { label: "Beyond", href: "#beyond", icon: Heart },
+  { label: "Contact", href: "#contact", icon: Mail },
 ];
 
 const Navbar = () => {
@@ -52,13 +55,14 @@ const Navbar = () => {
         </a>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-5">
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-sm font-body text-muted-foreground hover:text-primary transition-colors duration-200"
+              className="flex items-center gap-1.5 text-xs font-body text-muted-foreground hover:text-primary transition-colors duration-200 group"
             >
+              <item.icon size={14} className="opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-200" />
               {item.label}
             </a>
           ))}
@@ -88,8 +92,9 @@ const Navbar = () => {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-sm font-body text-muted-foreground hover:text-primary transition-colors"
+                  className="flex items-center gap-2 text-sm font-body text-muted-foreground hover:text-primary transition-colors"
                 >
+                  <item.icon size={16} className="opacity-70" />
                   {item.label}
                 </a>
               ))}
