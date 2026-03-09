@@ -92,8 +92,9 @@ const Navbar = () => {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-sm font-body text-muted-foreground hover:text-primary transition-colors"
+                  className="flex items-center gap-2 text-sm font-body text-muted-foreground hover:text-primary transition-colors"
                 >
+                  <item.icon size={16} className="opacity-70" />
                   {item.label}
                 </a>
               ))}
