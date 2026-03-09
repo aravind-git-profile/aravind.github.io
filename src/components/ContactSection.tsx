@@ -1,5 +1,5 @@
 import { Mail, Phone, MapPin, Linkedin, ExternalLink } from "lucide-react";
-import coverBanner from "@/assets/cover-banner.png";
+import coverBanner from "@/assets/contact-banner.png";
 
 const ContactSection = () => {
   return (
