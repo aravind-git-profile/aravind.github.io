@@ -4,6 +4,7 @@ import verizonLogo from "@/assets/logos/verizon.svg";
 import uniphoreLogo from "@/assets/logos/uniphore.png";
 import bnpLogo from "@/assets/logos/bnp-paribas.png";
 import greatlakesLogo from "@/assets/logos/greatlakes.png";
+import pramericaLogo from "@/assets/logos/pramerica.png";
 import itmLogo from "@/assets/logos/itm.jpg";
 
 const timelineItems = [
@@ -67,6 +68,21 @@ const timelineItems = [
       "Championed automation elevating data accuracy to 100%",
       "Golden Star, Rising Star & 8 Kaizen Awards",
       "3 promotions in 4 years",
+    ],
+  },
+  {
+    type: "work" as const,
+    company: "Pramerica Asset Managers",
+    role: "Intern",
+    period: "Apr 2014 – Aug 2014",
+    location: "Chennai, India",
+    logo: pramericaLogo,
+    logoBg: "bg-white",
+    highlights: [
+      "Portfolio management: oversaw investment strategies to optimize returns",
+      "Fundamental & technical analysis of stocks and derivatives for trading decisions",
+      "Mutual fund & global securities analysis to guide investment strategies",
+      "Back office operations management ensuring accurate record-keeping & efficiency",
     ],
   },
   {
