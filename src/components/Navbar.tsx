@@ -55,13 +55,14 @@ const Navbar = () => {
         </a>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-5">
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-sm font-body text-muted-foreground hover:text-primary transition-colors duration-200"
+              className="flex items-center gap-1.5 text-xs font-body text-muted-foreground hover:text-primary transition-colors duration-200 group"
             >
+              <item.icon size={14} className="opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-200" />
               {item.label}
             </a>
           ))}
