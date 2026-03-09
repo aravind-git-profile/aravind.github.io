@@ -71,6 +71,21 @@ const timelineItems = [
     ],
   },
   {
+    type: "work" as const,
+    company: "Pramerica Asset Managers",
+    role: "Intern",
+    period: "Apr 2014 – Aug 2014",
+    location: "Chennai, India",
+    logo: pramericaLogo,
+    logoBg: "bg-white",
+    highlights: [
+      "Portfolio management: oversaw investment strategies to optimize returns",
+      "Fundamental & technical analysis of stocks and derivatives for trading decisions",
+      "Mutual fund & global securities analysis to guide investment strategies",
+      "Back office operations management ensuring accurate record-keeping & efficiency",
+    ],
+  },
+  {
     type: "education" as const,
     company: "ITM – Institute for Technology & Management",
     role: "PGDM – Finance",
