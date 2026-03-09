@@ -4,6 +4,7 @@ import verizonLogo from "@/assets/logos/verizon.svg";
 import uniphoreLogo from "@/assets/logos/uniphore.png";
 import bnpLogo from "@/assets/logos/bnp-paribas.png";
 import greatlakesLogo from "@/assets/logos/greatlakes.png";
+import pramericaLogo from "@/assets/logos/pramerica.png";
 import itmLogo from "@/assets/logos/itm.jpg";
 
 const timelineItems = [
